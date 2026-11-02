@@ -1,15 +1,138 @@
 <!DOCTYPE html>
 <html lang="es">
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Altiva Laser</title>
     <link rel="icon" type="image/png" href="icon.png">  
-</head>
     
-<body>
-    <p>Probando url</p>
-</body>
+    <style>
+        .navbar {
+            background: white;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: 0.3s;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .tab-container {
+            max-width: 1200px;
+            margin: 20px auto 50px;
+            padding: 0 20px;
+        }
+
+        .tab-content {
+            display: none; 
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .tab-content.active {
+            display: block !important;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-main {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            border: 4px solid white;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary { background: white; color: #764ba2; }
+        .btn-primary:hover { background: #f0f0f0; transform: translateY(-2px); }
+
+        .btn-secondary { background: rgba(255,255,255,0.2); color: white; border: 1px solid white; }
+        .btn-secondary:hover { background: rgba(255,255,255,0.3); transform: translateY(-2px); }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-r.min.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="logo">David Rubio</a>
+        <div class="nav-links">
+            <a onclick="showTab('inicio')">Inicio</a>
+            <a onclick="showTab('proyectos')">Catálogo</a>
+            <a onclick="showTab('proyectos')">Contacto</a>
+        </div>
+    </nav>
+
+</body>
 </html>
