@@ -115,9 +115,9 @@
             font-size: 1.1rem;
             color: var(--primary);
             font-weight: 600;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             margin-bottom: 20px;
-            text-transform: uppercase;
+            font-style: italic; /* Cursiva para el subtítulo */
         }
 
         .hero-description {
@@ -170,55 +170,88 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-
         /* Sección de Contacto */
-.contact-container {
-    max-width: 650px;
-    margin: 0 auto;
-    background: white;
-    padding: 50px 40px;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-    text-align: center;
-}
+        .contact-container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
 
-.contact-title {
-    font-size: 1.8rem;
-    color: var(--primary);
-    margin-bottom: 10px;
-}
+        .contact-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
 
-.contact-subtitle {
-    color: #666;
-    margin-bottom: 30px;
-    font-size: 0.95rem;
-}
+        .contact-subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
 
-.contact-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
 
-.btn-whatsapp {
-    background: #25D366;
-    color: white;
-    justify-content: center;
-}
-.btn-whatsapp:hover {
-    background: #1EBE5D;
-    transform: translateY(-2px);
-}
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+            justify-content: center;
+        }
+        .btn-whatsapp:hover {
+            background: #1EBE5D;
+            transform: translateY(-2px);
+        }
 
-.btn-instagram {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    color: white;
-    justify-content: center;
-}
-.btn-instagram:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
-}
+        .btn-instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+            justify-content: center;
+        }
+        .btn-instagram:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* Bloque de Ubicación */
+        .location-box {
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 1px solid #EAEAEA;
+        }
+
+        .location-title {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .location-address {
+            font-size: 1rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .btn-map {
+            background: #F7ECE1;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            justify-content: center;
+            font-size: 0.85rem;
+            padding: 10px 20px;
+        }
+        .btn-map:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
     </style>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
@@ -238,6 +271,7 @@
     </nav>
     
     <main class="container">
+        <!-- Pestaña Inicio -->
         <div id="inicio" class="tab-content active">
             <section class="hero-main">
                 <img src="icon.png" alt="Logo Altiva Láser" class="hero-logo-icon">
@@ -252,41 +286,50 @@
                 <button class="btn btn-primary" onclick="showTab('proyectos')">VER CATÁLOGO</button>
             </section>
         </div>
+
+        <!-- Pestaña Catálogo -->
         <div id="proyectos" class="tab-content">
         </div>
 
+        <!-- Pestaña Contacto -->
+        <div id="contacto" class="tab-content">
+            <div class="contact-container">
+                <h2 class="contact-title">¿Tienes un pedido especial?</h2>
+                <p class="contact-subtitle">Contáctanos directamente para cotizaciones al por mayor o diseños personalizados.</p>
 
-<!------------------------- pestaña de contacto -------------------------------->
-<div id="contacto" class="tab-content">
-    <div class="contact-container">
-        <h2 class="contact-title">¿Tienes un pedido especial?</h2>
-        <p class="contact-subtitle">Contáctanos directamente para cotizaciones al por mayor o diseños personalizados.</p>
+                <div class="contact-buttons">
+                    <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20m%C3%A1s%20informaci%C3%B3n%20sobre..." target="_blank" class="btn btn-whatsapp">
+                        Escribir por WhatsApp
+                    </a>
 
-        <div class="contact-buttons">
-           <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20m%C3%A1s%20informaci%C3%B3n%20sobre..." target="_blank" class="btn btn-whatsapp">
-            Escribir por WhatsApp
-            </a>
+                    <a href="https://www.instagram.com/altivalaser_oficial?mdxt=MXVxb3d1bzI1NDhzcQ==" target="_blank" class="btn btn-instagram">
+                        Ver en Instagram
+                    </a>
+                </div>
 
-            <a href="https://www.instagram.com/altivalaser_oficial?mdxt=MXVxb3d1bzI1NDhzcQ==" target="_blank" class="btn btn-instagram">
-                Ver en Instagram
-            </a>
+                <!-- Sección de Ubicación -->
+                <div class="location-box">
+                    <h3 class="location-title">📍 Visítanos</h3>
+                    <p class="location-address">Carrera 50A #92-46, Aranjuez</p>
+                    <a href="https://maps.google.com/?q=Carrera+50A+%2392-46,+Aranjuez" target="_blank" class="btn btn-map">
+                        Abrir en Google Maps
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-<!----------------------------------------------------------------------------->
     </main>
 
     <script>
-    function showTab(tabId) {
-        const tabs = document.querySelectorAll('.tab-content');
-        tabs.forEach(tab => tab.classList.remove('active'));
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
 
-        const selectedTab = document.getElementById(tabId);
-        if (selectedTab) {
-            selectedTab.classList.add('active');
+            const selectedTab = document.getElementById(tabId);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
         }
-    }
-</script>
+    </script>
 
 </body>
 </html>
