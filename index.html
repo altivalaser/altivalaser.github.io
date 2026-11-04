@@ -523,6 +523,50 @@
             border-radius: 8px;
         }
 
+        /* Contenedor y botones de Paginación */
+        .pagination-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-top: 35px;
+            margin-bottom: 25px;
+        }
+
+        .btn-page {
+            background: white;
+            border: 1px solid #E2D7CD;
+            color: var(--text-dark);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-page:hover:not(:disabled) {
+            background: var(--bg-light);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-page.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(143, 67, 20, 0.25);
+        }
+
+        .btn-page:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
         .catalog-download-box {
             margin-top: 50px;
             background: white;
@@ -616,7 +660,7 @@
         <a href="#" class="logo">ALTIVA LÁSER</a>
         <div class="nav-links">
             <a onclick="showTab('inicio')">Inicio</a>
-            <a onclick="showTab('quienessomos')">Quiénes Somos</a>  
+            <a onclick="showTab('quienessomos')">Quiénes Somos</a> 
             <a onclick="showTab('catalogo')">Catálogo</a>
             <a onclick="showTab('contacto')">Contacto</a>
         </div>
@@ -639,6 +683,41 @@
             </section>
         </div>
 
+        <!-- Pestaña Quiénes Somos -->
+        <div id="quienessomos" class="tab-content">
+            <div class="about-card">
+                <h2 class="section-title-center">Quiénes Somos</h2>
+                <p class="section-subtitle-center">Conoce la pasión y el diseño detrás de Altiva Láser</p>
+
+                <div class="mv-grid">
+                    <div class="mv-box">
+                        <h3 class="mv-title">🎯 Nuestra Misión</h3>
+                        <p class="mv-text">Transformar ideas en piezas únicas de acrílico y madera mediante tecnología láser de alta precisión, ofreciendo empaques y elementos decorativos que agreguen valor estético y comercial a nuestros clientes.</p>
+                    </div>
+                    <div class="mv-box">
+                        <h3 class="mv-title">🌟 Nuestra Visión</h3>
+                        <p class="mv-text">Ser el taller líder de diseño y corte láser reconocido por la excelencia en acabados, innovación constante en empaques de lujo y el desarrollo continuo de nuevos productos para repostería y eventos.</p>
+                    </div>
+                </div>
+
+                <h3 class="section-title-center" style="font-size: 1.4rem; margin-top: 40px;">Nuestro Equipo</h3>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <img src="icon.png" alt="Diseño & Producción" class="team-img">
+                        <h4 class="team-name">Equipo de Diseño</h4>
+                        <span class="team-role">Corte & Personalización</span>
+                        <p class="team-bio">Especialistas en dar forma y grabado perfecto a cada una de tus ideas en acrílico y madera.</p>
+                    </div>
+                    <div class="team-card">
+                        <img src="icon.png" alt="Atención al Cliente" class="team-img">
+                        <h4 class="team-name">Atención al Cliente</h4>
+                        <span class="team-role">Asesoría Directa</span>
+                        <p class="team-bio">Listos para orientarte en medidas, precios al detal/por mayor y tiempos de producción.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Pestaña Catálogo -->
         <div id="catalogo" class="tab-content">
             <div class="catalog-header">
@@ -656,568 +735,399 @@
                 </div>
 
                 <!-- Filtros por Categoría -->
-            <div class="filter-container">
-                <button class="btn-filter active" onclick="filterCategory('todos', this)">Todos</button>
-                <button class="btn-filter" onclick="filterCategory('acrilicos', this)">Empaques Acrílicos</button>
-                <button class="btn-filter" onclick="filterCategory('boho', this)">Línea Boho & Madera</button>
-                <button class="btn-filter" onclick="filterCategory('apliques', this)">Bases & Apliques</button>
-                <button class="btn-filter" onclick="filterCategory('temporada', this)">Especiales & Regalos</button>
-            </div>
+                <div class="filter-container">
+                    <button class="btn-filter active" onclick="filterCategory('todos', this)">Todos</button>
+                    <button class="btn-filter" onclick="filterCategory('acrilicos', this)">Empaques Acrílicos</button>
+                    <button class="btn-filter" onclick="filterCategory('boho', this)">Línea Boho & Madera</button>
+                    <button class="btn-filter" onclick="filterCategory('apliques', this)">Bases & Apliques</button>
+                    <button class="btn-filter" onclick="filterCategory('temporada', this)">Especiales & Regalos</button>
+                </div>
             </div>
 
             <!-- GRILLA DE PRODUCTOS -->
             <div class="catalog-grid" id="catalogGrid">
 
-
-
-
-
-
-
-                
                 <!-- Producto 1: Caja Exhibidora Postres -->
-<div class="product-card" data-category="acrilicos" data-name="caja acrilica exhibidora postres reposteria">
-    <div class="product-img-wrapper">
-        <span class="product-badge">Uso Comercial</span>
-        <img src="caja_exhibidora_postres.jpeg" alt="Caja Acrílica Exhibidora de Postres" class="product-img" onerror="this.src='icon.png'">
-    </div>
-    <div class="product-info">
-        <h3 class="product-title">Caja Acrílica Exhibidora de Postres</h3>
-        <p class="product-specs">Acrílico uso en frío | 30 x 10 x 10 cm | Incluye espátula y compuertas removibles</p>
-        <div class="product-prices">
-            <span class="price-detal">$45.000 <small>Sin tapa</small></span>
-            <span class="price-wholesale">$50.000 <small>Con tapa</small></span>
-        </div>
-        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20la%20Caja%20Acr%C3%ADlica%20Exhibidora%20de%20Postres" target="_blank" class="btn btn-whatsapp product-btn">
-            Pedir por WhatsApp
-        </a>
-    </div>
-</div>
+                <div class="product-card" data-category="acrilicos" data-name="caja acrilica exhibidora postres reposteria">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Uso Comercial</span>
+                        <img src="caja_exhibidora_postres.jpeg" alt="Caja Acrílica Exhibidora de Postres" class="product-img" onerror="this.src='icon.png'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Caja Acrílica Exhibidora de Postres</h3>
+                        <p class="product-specs">Acrílico uso en frío | 30 x 10 x 10 cm | Incluye espátula y compuertas removibles</p>
+                        <div class="product-prices">
+                            <span class="price-detal">$45.000 <small>Sin tapa</small></span>
+                            <span class="price-wholesale">$50.000 <small>Con tapa</small></span>
+                        </div>
+                        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20la%20Caja%20Acr%C3%ADlica%20Exhibidora%20de%20Postres" target="_blank" class="btn btn-whatsapp product-btn">
+                            Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
 
-
-
-
-
-
-
-
-                
                 <!-- Producto 2: Caja Acrílica Domo -->
-<div class="product-card" data-category="acrilicos temporada" data-name="caja acrilica domo capilla regalo navidad">
-    <div class="product-img-wrapper">
-        <span class="product-badge">Regalos & Navidad</span>
-        <img src="caja-acrilica_domo_con_lazo.jpeg" alt="Caja Acrílica Domo con Lazo" class="product-img" onerror="this.src='icon.png'">
-    </div>
-    <div class="product-info">
-        <h3 class="product-title">Caja Acrílica Domo con Lazo</h3>
-        <p class="product-specs">Acrílico transparente | 10 x 10 cm (12 cm de altura) | Ideal para detalles y dulces</p>
-        <div class="product-prices">
-            <span class="price-detal">$16.000 <small>und</small></span>
-            <span class="price-wholesale"><small>No incluye aplique</small></span>
-        </div>
-        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20la%20Caja%20Acr%C3%ADlica%20Domo%20con%20Lazo" target="_blank" class="btn btn-whatsapp product-btn">
-            Pedir por WhatsApp
-        </a>
-    </div>
-</div>
+                <div class="product-card" data-category="acrilicos temporada" data-name="caja acrilica domo capilla regalo navidad">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Regalos & Navidad</span>
+                        <img src="caja-acrilica_domo_con_lazo.jpeg" alt="Caja Acrílica Domo con Lazo" class="product-img" onerror="this.src='icon.png'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Caja Acrílica Domo con Lazo</h3>
+                        <p class="product-specs">Acrílico transparente | 10 x 10 cm (12 cm de altura) | Ideal para detalles y dulces</p>
+                        <div class="product-prices">
+                            <span class="price-detal">$16.000 <small>und</small></span>
+                            <span class="price-wholesale"><small>No incluye aplique</small></span>
+                        </div>
+                        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20la%20Caja%20Acr%C3%ADlica%20Domo%20con%20Lazo" target="_blank" class="btn btn-whatsapp product-btn">
+                            Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
 
-
-
-
-
-
-
-
-                
                 <!-- Producto 3: Cartera Luxury en Acrílico -->
-<div class="product-card" data-category="acrilicos" data-name="cartera luxury acrilico flores regalo torta">
-    <div class="product-img-wrapper">
-        <span class="product-badge">Acrílico Luxury</span>
-        <img src="cartera_luxury_en_acrilico.jpeg" alt="Cartera Luxury en Acrílico" class="product-img" onerror="this.src='icon.png'">
-    </div>
-    <div class="product-info">
-        <h3 class="product-title">Cartera Luxury en Acrílico</h3>
-        <p class="product-specs">Cadena dorada y apliques de lujo | Ideal para flores, tortas y detalles</p>
-        <div class="product-prices">
-            <span class="price-detal">$35.000 <small>25x20x13 cm</small></span>
-            <span class="price-wholesale">$45.000 <small>30x25x12 cm</small></span>
-        </div>
-        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20pedir%20la%20Cartera%20Luxury%20en%20Acr%C3%ADlico" target="_blank" class="btn btn-whatsapp product-btn">
-            Pedir por WhatsApp
-        </a>
-    </div>
-</div>
+                <div class="product-card" data-category="acrilicos" data-name="cartera luxury acrilico flores regalo torta">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Acrílico Luxury</span>
+                        <img src="cartera_luxury_en_acrilico.jpeg" alt="Cartera Luxury en Acrílico" class="product-img" onerror="this.src='icon.png'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Cartera Luxury en Acrílico</h3>
+                        <p class="product-specs">Cadena dorada y apliques de lujo | Ideal para flores, tortas y detalles</p>
+                        <div class="product-prices">
+                            <span class="price-detal">$35.000 <small>25x20x13 cm</small></span>
+                            <span class="price-wholesale">$45.000 <small>30x25x12 cm</small></span>
+                        </div>
+                        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20pedir%20la%20Cartera%20Luxury%20en%20Acr%C3%ADlico" target="_blank" class="btn btn-whatsapp product-btn">
+                            Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
 
-
-
-
-
-
-
-                
                 <!-- Producto 4: Caja Encanto en Acrílico -->
-<div class="product-card" data-category="acrilicos" data-name="caja encanto acrilico postres regalo torta">
-    <div class="product-img-wrapper">
-        <span class="product-badge">Regalos & Postres</span>
-        <img src="caja_encanto_acrilico.jpeg" alt="Caja Encanto en Acrílico" class="product-img" onerror="this.src='icon.png'">
-    </div>
-    <div class="product-info">
-        <h3 class="product-title">Caja Encanto en Acrílico</h3>
-        <p class="product-specs">Con manija integrada y lazo decorativo | Ref: 20 x 22 x 12 cm</p>
-        <div class="product-prices">
-            <span class="price-detal">$28.000 <small>und</small></span>
-        </div>
-        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20la%20Caja%20Encanto%20en%20Acr%C3%ADlico" target="_blank" class="btn btn-whatsapp product-btn">
-            Pedir por WhatsApp
-        </a>
-    </div>
-</div>
+                <div class="product-card" data-category="acrilicos" data-name="caja encanto acrilico postres regalo torta">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Regalos & Postres</span>
+                        <img src="caja_encanto_acrilico.jpeg" alt="Caja Encanto en Acrílico" class="product-img" onerror="this.src='icon.png'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Caja Encanto en Acrílico</h3>
+                        <p class="product-specs">Con manija integrada y lazo decorativo | Ref: 20 x 22 x 12 cm</p>
+                        <div class="product-prices">
+                            <span class="price-detal">$28.000 <small>und</small></span>
+                        </div>
+                        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20la%20Caja%20Encanto%20en%20Acr%C3%ADlico" target="_blank" class="btn btn-whatsapp product-btn">
+                            Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
 
-
-
-
-
-
-
-                
                 <!-- Producto 5: Bandeja Tradicional en Acrílico -->
-<div class="product-card" data-category="acrilicos" data-name="bandeja tradicional acrilico desayunos exhibicion">
-    <div class="product-img-wrapper">
-        <span class="product-badge">Uso Comercial & Eventos</span>
-        <img src="bandeja_tradicional_acrilico.jpeg" alt="Bandeja Tradicional en Acrílico" class="product-img" onerror="this.src='icon.png'">
-    </div>
-    <div class="product-info">
-        <h3 class="product-title">Bandeja Tradicional en Acrílico</h3>
-        <p class="product-specs">Acrílico transparente | Ref: 30 x 20 x 5 cm | Ideal para desayunos y detalles</p>
-        <div class="product-prices">
-            <span class="price-detal">$18.000 <small>und</small></span>
-        </div>
-        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20la%20Bandeja%20Tradicional%20en%20Acr%C3%ADlico" target="_blank" class="btn btn-whatsapp product-btn">
-            Pedir por WhatsApp
-        </a>
-    </div>
-</div>
+                <div class="product-card" data-category="acrilicos" data-name="bandeja tradicional acrilico desayunos exhibicion">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Uso Comercial & Eventos</span>
+                        <img src="bandeja_tradicional_acrilico.jpeg" alt="Bandeja Tradicional en Acrílico" class="product-img" onerror="this.src='icon.png'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Bandeja Tradicional en Acrílico</h3>
+                        <p class="product-specs">Acrílico transparente | Ref: 30 x 20 x 5 cm | Ideal para desayunos y detalles</p>
+                        <div class="product-prices">
+                            <span class="price-detal">$18.000 <small>und</small></span>
+                        </div>
+                        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20la%20Bandeja%20Tradicional%20en%20Acr%C3%ADlico" target="_blank" class="btn btn-whatsapp product-btn">
+                            Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
 
-
-
-
-
-
-
-
-                
                 <!-- Producto 6: Caja Mix Premium -->
-<div class="product-card" data-category="acrilicos temporada" data-name="caja mix premium regalo anchetas madera acrilico navidad">
-    <div class="product-img-wrapper">
-        <span class="product-badge">Regalos & Anchetas</span>
-        <img src="caja_mix_premium.jpeg" alt="Caja Mix Premium" class="product-img" onerror="this.src='icon.png'">
-    </div>
-    <div class="product-info">
-        <h3 class="product-title">Caja Mix Premium</h3>
-        <p class="product-specs">Madera & Acrílico con asas | Ref: 25 x 10 x 10 cm | Ideal para anchetas y regalos</p>
-        <div class="product-prices">
-            <span class="price-detal">$25.000 <small>und</small></span>
-        </div>
-        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20la%20Caja%20Mix%20Premium" target="_blank" class="btn btn-whatsapp product-btn">
-            Pedir por WhatsApp
-        </a>
-    </div>
-</div>
-
-
-
-<!-- Producto 7: Cartera Luxury (Ref 25x20x13 cm) -->
-<div class="product-card" data-category="acrilicos" data-name="cartera luxury acrilico flores regalo torta 25x20x13">
-    <div class="product-img-wrapper">
-        <span class="product-badge">Acrílico Luxury</span>
-        <img src="cartera_luxury.jpeg" alt="Cartera Luxury en Acrílico 25x20x13 cm" class="product-img" onerror="this.src='icon.png'">
-    </div>
-    <div class="product-info">
-        <h3 class="product-title">Cartera Luxury en Acrílico</h3>
-        <p class="product-specs">Cadena dorada y herrajes | Ref: 25 x 20 x 13 cm | Ideal para postres y arreglos</p>
-        <div class="product-prices">
-            <span class="price-detal">$35.000 <small>und</small></span>
-        </div>
-        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20la%20Cartera%20Luxury%20%28Ref%2025x20x13%20cm%29" target="_blank" class="btn btn-whatsapp product-btn">
-            Pedir por WhatsApp
-        </a>
-    </div>
-</div>
-
-
-
-
-
-<!-- Producto 8: Caja Acrílica Exhibidora de Postres -->
-<div class="product-card" data-category="acrilicos" data-name="caja acrilica exhibidora postres reposteria 30x10x10">
-    <div class="product-img-wrapper">
-        <span class="product-badge">Uso Comercial</span>
-        <img src="caja_acrilica_exhibidora_postres.jpeg" alt="Caja Acrílica Exhibidora de Postres" class="product-img" onerror="this.src='icon.png'">
-    </div>
-    <div class="product-info">
-        <h3 class="product-title">Caja Acrílica Exhibidora de Postres</h3>
-        <p class="product-specs">30 x 10 x 10 cm | Incluye espátula y compuertas removibles | Especial uso en frío</p>
-        <div class="product-prices">
-            <span class="price-detal">$45.000 <small>Sin tapa</small></span>
-            <span class="price-wholesale">$50.000 <small>Con tapa</small></span>
-        </div>
-        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20la%20Caja%20Acr%C3%ADlica%20Exhibidora%20de%20Postres" target="_blank" class="btn btn-whatsapp product-btn">
-            Pedir por WhatsApp
-        </a>
-    </div>
-</div>
-
-
-
-
-
-
-<!-- Producto 9: Bases Rectangulares para Repostería -->
-<div class="product-card" data-category="apliques" data-name="bases rectangulares reposteria cake boards mdf acrilico logo">
-    <div class="product-img-wrapper">
-        <span class="product-badge">Repostería & Marca</span>
-        <img src="bases_rectangulares_reposteria.jpeg" alt="Bases Rectangulares para Repostería" class="product-img" onerror="this.src='icon.png'">
-    </div>
-    <div class="product-info">
-        <h3 class="product-title">Bases Rectangulares para Repostería</h3>
-        <p class="product-specs">Esquinas redondeadas | Grabado de logo personalizado | Resistentes a la humedad</p>
-        <div class="product-prices">
-            <span class="price-detal">Cotizar <small>según medida</small></span>
-            <span class="price-wholesale">Descuento <small>por mayor</small></span>
-        </div>
-        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesan%20las%20Bases%20Rectangulares%20para%20Reposter%C3%ADa%20con%20mi%20logo" target="_blank" class="btn btn-whatsapp product-btn">
-            Pedir por WhatsApp
-        </a>
-    </div>
-</div>
-                
-
-
-
-
-                
-
-<!-- Producto 10: Bases Especiales con Logo -->
-<div class="product-card" data-category="apliques" data-name="bases especiales logo cake boards mdf forma calado marca">
-    <div class="product-img-wrapper">
-        <span class="product-badge">Marca & Repostería</span>
-        <img src="bases_especiales_con_logo.jpeg" alt="Bases Especiales con Logo (Cake Boards)" class="product-img" onerror="this.src='icon.png'">
-    </div>
-    <div class="product-info">
-        <h3 class="product-title">Bases Especiales con Logo (Cake Boards)</h3>
-        <p class="product-specs">Superficie laminada blanca | Formas y calados personalizados | Grabado de logo comercial</p>
-        <div class="product-prices">
-            <span class="price-detal">Cotizar <small>según medida</small></span>
-            <span class="price-wholesale">Descuento <small>por mayor</small></span>
-        </div>
-        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesan%20las%20Bases%20Especiales%20con%20mi%20logo" target="_blank" class="btn btn-whatsapp product-btn">
-            Pedir por WhatsApp
-        </a>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-<!-- Producto 11: Bases Circulares para Repostería -->
-<div class="product-card" data-category="apliques" data-name="bases circulares reposteria cake boards mdf acrilico logo marca">
-    <div class="product-img-wrapper">
-        <span class="product-badge">Repostería & Marca</span>
-        <img src="bases_circulares_para_reposteria.jpeg" alt="Bases Circulares para Repostería" class="product-img" onerror="this.src='icon.png'">
-    </div>
-    <div class="product-info">
-        <h3 class="product-title">Bases Circulares para Repostería</h3>
-        <p class="product-specs">Corte circular perfecto | Grabado de logo personalizado | MDF laminado blanco alta resistencia</p>
-        <div class="product-prices">
-            <span class="price-detal">Cotizar <small>según medida</small></span>
-            <span class="price-wholesale">Descuento <small>por mayor</small></span>
-        </div>
-        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesan%20las%20Bases%20Circulares%20para%20Reposter%C3%ADa%20con%20mi%20logo" target="_blank" class="btn btn-whatsapp product-btn">
-            Pedir por WhatsApp
-        </a>
-    </div>
-</div>
-
-
-
-
-
-
-
-  <!-- Producto 12: Madero Boho Chic Mini (Corregida extensión a .jpeg) -->
-<div class="product-card" data-category="boho" data-name="madero boho chic mini madera pino acrilico espejo foto florero">
-    <div class="product-img-wrapper">
-        <span class="product-badge">Línea Boho</span>
-        <img src="madera_boho_chic_mini.jpeg" alt="Madero Boho Chic Mini" class="product-img" onerror="this.src='icon.png'">
-    </div>
-    <div class="product-info">
-        <h3 class="product-title">Madero Boho Chic Mini</h3>
-        <p class="product-specs">Madera pino y acrílico espejo | 11 cm de ancho | Incluye florero mini decorativo</p>
-        <div class="product-prices">
-            <span class="price-detal">$20.000 <small>und</small></span>
-            <span class="price-wholesale">$18.000 <small>x 6+ und</small></span>
-        </div>
-        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20el%20Madero%20Boho%20Chic%20Mini" target="_blank" class="btn btn-whatsapp product-btn">
-            Pedir por WhatsApp
-        </a>
-    </div>
-</div>
-
-
-
-
-
-
-<!-- Producto 13: Madero Boho Chic Mini Sencillo -->
-<div class="product-card" data-category="boho" data-name="madero boho chic mini sencillo madera pino acrilico espejo regalo mama">
-    <div class="product-img-wrapper">
-        <span class="product-badge">Línea Boho</span>
-        <img src="madera_boho_chic_mini_2.png" alt="Madero Boho Chic Mini Sencillo" class="product-img" onerror="this.src='icon.png'">
-    </div>
-    <div class="product-info">
-        <h3 class="product-title">Madero Boho Chic Mini Sencillo</h3>
-        <p class="product-specs">Madera pino y acrílico espejo | 11 cm de ancho | Grabado botánico y mensaje</p>
-        <div class="product-prices">
-            <span class="price-detal">$18.000 <small>und</small></span>
-            <span class="price-wholesale">$16.000 <small>x 6+ und</small></span>
-        </div>
-        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20el%20Madero%20Boho%20Chic%20Mini%20Sencillo" target="_blank" class="btn btn-whatsapp product-btn">
-            Pedir por WhatsApp
-        </a>
-    </div>
-</div>             
-
-                
-
-
-
-
-
-
-<!-- Producto 14: Madero Boho Chic Grande (Corregido nombre de imagen a madera_boho_chic_mediano.png) -->
-<div class="product-card" data-category="boho" data-name="madero boho chic grande madera pino acrilico espejo foto florero vela">
-    <div class="product-img-wrapper">
-        <span class="product-badge">Línea Boho</span>
-        <img src="madera_boho_chic_mediano.png" alt="Madero Boho Chic Grande" class="product-img" onerror="this.src='icon.png'">
-    </div>
-    <div class="product-info">
-        <h3 class="product-title">Madero Boho Chic Grande</h3>
-        <p class="product-specs">Madera pino y acrílico espejo | 25 cm de ancho | Incluye florero mini y espacio para vela</p>
-        <div class="product-prices">
-            <span class="price-detal">$40.000 <small>und</small></span>
-            <span class="price-wholesale">$35.000 <small>x 6+ und</small></span>
-        </div>
-        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20el%20Madero%20Boho%20Chic%20Grande" target="_blank" class="btn btn-whatsapp product-btn">
-            Pedir por WhatsApp
-        </a>
-    </div>
-</div>
-                
-
-
-
-
-
-<!-- Producto 15: Madero Boho Chic Solitarios (Corregido madero por madera en la ruta de imagen) -->
-<div class="product-card" data-category="boho" data-name="madero boho chic solitarios madera pino florero flores botella 11cm 5cm">
-    <div class="product-img-wrapper">
-        <span class="product-badge">Línea Boho</span>
-        <img src="madera_boho_chic_solitarios.png" alt="Madero Boho Chic Solitarios" class="product-img" onerror="this.src='icon.png'">
-    </div>
-    <div class="product-info">
-        <h3 class="product-title">Madero Boho Chic Solitarios</h3>
-        <p class="product-specs">Madera pino | Incluye botella de vidrio y flores | Ref: 11 cm y 5 cm</p>
-        <div class="product-prices">
-            <span class="price-detal">$8.000 <small>5 cm</small></span>
-            <span class="price-wholesale">$16.000 <small>11 cm</small></span>
-        </div>
-        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesan%20los%20Maderos%20Boho%20Chic%20Solitarios" target="_blank" class="btn btn-whatsapp product-btn">
-            Pedir por WhatsApp
-        </a>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-<!-- Producto 16: Diseños en Acrílico Espejo -->
-<div class="product-card" data-category="acrilicos apliques" data-name="disenos acrilicos espejo placas grabado laser orgánico arco personalizado">
-    <div class="product-img-wrapper">
-        <span class="product-badge">Acrílico Espejo</span>
-        <img src="diseños_acrilicos.png" alt="Diseños en Acrílico Espejo Personalizados" class="product-img" onerror="this.src='icon.png'">
-    </div>
-    <div class="product-info">
-        <h3 class="product-title">Diseños en Acrílico Espejo</h3>
-        <p class="product-specs">Formas orgánicas, arcos y curvas | Grabado láser personalizado | Sujeto a disponibilidad de color</p>
-        <div class="product-prices">
-            <span class="price-detal">Cotizar <small>según medida</small></span>
-            <span class="price-wholesale">Descuento <small>por mayor</small></span>
-        </div>
-        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesan%20los%20Dise%C3%B1os%20en%20Acr%C3%ADlico%20Espejo%20personalizados" target="_blank" class="btn btn-whatsapp product-btn">
-            Pedir por WhatsApp
-        </a>
-    </div>
-</div>
-
-                
-                
-                
-
-
-
-
-
-
-
-
-<!-- Producto 17: Tarjeta Porta Billetes en Acrílico -->
-<div class="product-card" data-category="apliques temporada" data-name="tarjeta billetes porta dinero acrilico espejo grabado regalo mama">
-    <div class="product-img-wrapper">
-        <span class="product-badge">Detalles & Regalos</span>
-        <img src="tarjeta_billetes.png" alt="Tarjeta Porta Billetes en Acrílico" class="product-img" onerror="this.src='icon.png'">
-    </div>
-    <div class="product-info">
-        <h3 class="product-title">Tarjeta Porta Billetes en Acrílico</h3>
-        <p class="product-specs">Acrílico espejo | Grabado de mensajes especiales | Incluye espacio para lazo y billete</p>
-        <div class="product-prices">
-            <span class="price-detal">$10.000 <small>und</small></span>
-            <span class="price-wholesale">$8.000 <small>x 12+ und</small></span>
-        </div>
-        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesan%20las%20Tarjetas%20Porta%20Billetes%20en%20Acr%C3%ADlico" target="_blank" class="btn btn-whatsapp product-btn">
-            Pedir por WhatsApp
-        </a>
-    </div>
-</div>
-                
-
-
-
-
-
-
-
-
-
-
-<!-- Producto 18: Monedas y Apliques Acrílicos -->
-<div class="product-card" data-category="apliques temporada" data-name="monedas apliques acrilicos tags etiquetas dije espejo grabado mama feliz dia 5cm">
-    <div class="product-img-wrapper">
-        <span class="product-badge">Apliques & Tags</span>
-        <img src="monedas_apliques_acrilicos.png" alt="Monedas y Apliques Acrílicos" class="product-img" onerror="this.src='icon.png'">
-    </div>
-    <div class="product-info">
-        <h3 class="product-title">Monedas y Apliques Acrílicos</h3>
-        <p class="product-specs">Acrílico espejo | Tamaño: 5 cm | Formas circulares, tags y corazones con grabado láser</p>
-        <div class="product-prices">
-            <span class="price-detal">$2.200 <small>und</small></span>
-            <span class="price-wholesale">$1.800 <small>por mayor</small></span>
-        </div>
-        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesan%20las%20Monedas%20y%20Apliques%20Acr%C3%ADlicos" target="_blank" class="btn btn-whatsapp product-btn">
-            Pedir por WhatsApp
-        </a>
-    </div>
-</div>
-                
-
-
-
-                
-
-                
-
-
-
-                
+                <div class="product-card" data-category="acrilicos temporada" data-name="caja mix premium regalo anchetas madera acrilico navidad">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Regalos & Anchetas</span>
+                        <img src="caja_mix_premium.jpeg" alt="Caja Mix Premium" class="product-img" onerror="this.src='icon.png'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Caja Mix Premium</h3>
+                        <p class="product-specs">Madera & Acrílico con asas | Ref: 25 x 10 x 10 cm | Ideal para anchetas y regalos</p>
+                        <div class="product-prices">
+                            <span class="price-detal">$25.000 <small>und</small></span>
+                        </div>
+                        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20la%20Caja%20Mix%20Premium" target="_blank" class="btn btn-whatsapp product-btn">
+                            Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Producto 7: Cartera Luxury (Ref 25x20x13 cm) -->
+                <div class="product-card" data-category="acrilicos" data-name="cartera luxury acrilico flores regalo torta 25x20x13">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Acrílico Luxury</span>
+                        <img src="cartera_luxury.jpeg" alt="Cartera Luxury en Acrílico 25x20x13 cm" class="product-img" onerror="this.src='icon.png'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Cartera Luxury en Acrílico</h3>
+                        <p class="product-specs">Cadena dorada y herrajes | Ref: 25 x 20 x 13 cm | Ideal para postres y arreglos</p>
+                        <div class="product-prices">
+                            <span class="price-detal">$35.000 <small>und</small></span>
+                        </div>
+                        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20la%20Cartera%20Luxury%20%28Ref%2025x20x13%20cm%29" target="_blank" class="btn btn-whatsapp product-btn">
+                            Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Producto 8: Caja Acrílica Exhibidora de Postres -->
+                <div class="product-card" data-category="acrilicos" data-name="caja acrilica exhibidora postres reposteria 30x10x10">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Uso Comercial</span>
+                        <img src="caja_acrilica_exhibidora_postres.jpeg" alt="Caja Acrílica Exhibidora de Postres" class="product-img" onerror="this.src='icon.png'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Caja Acrílica Exhibidora de Postres</h3>
+                        <p class="product-specs">30 x 10 x 10 cm | Incluye espátula y compuertas removibles | Especial uso en frío</p>
+                        <div class="product-prices">
+                            <span class="price-detal">$45.000 <small>Sin tapa</small></span>
+                            <span class="price-wholesale">$50.000 <small>Con tapa</small></span>
+                        </div>
+                        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20la%20Caja%20Acr%C3%ADlica%20Exhibidora%20de%20Postres" target="_blank" class="btn btn-whatsapp product-btn">
+                            Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Producto 9: Bases Rectangulares para Repostería -->
+                <div class="product-card" data-category="apliques" data-name="bases rectangulares reposteria cake boards mdf acrilico logo">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Repostería & Marca</span>
+                        <img src="bases_rectangulares_reposteria.jpeg" alt="Bases Rectangulares para Repostería" class="product-img" onerror="this.src='icon.png'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Bases Rectangulares para Repostería</h3>
+                        <p class="product-specs">Esquinas redondeadas | Grabado de logo personalizado | Resistentes a la humedad</p>
+                        <div class="product-prices">
+                            <span class="price-detal">Cotizar <small>según medida</small></span>
+                            <span class="price-wholesale">Descuento <small>por mayor</small></span>
+                        </div>
+                        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesan%20las%20Bases%20Rectangulares%20para%20Reposter%C3%ADa%20con%20mi%20logo" target="_blank" class="btn btn-whatsapp product-btn">
+                            Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Producto 10: Bases Especiales con Logo -->
+                <div class="product-card" data-category="apliques" data-name="bases especiales logo cake boards mdf forma calado marca">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Marca & Repostería</span>
+                        <img src="bases_especiales_con_logo.jpeg" alt="Bases Especiales con Logo (Cake Boards)" class="product-img" onerror="this.src='icon.png'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Bases Especiales con Logo (Cake Boards)</h3>
+                        <p class="product-specs">Superficie laminada blanca | Formas y calados personalizados | Grabado de logo comercial</p>
+                        <div class="product-prices">
+                            <span class="price-detal">Cotizar <small>según medida</small></span>
+                            <span class="price-wholesale">Descuento <small>por mayor</small></span>
+                        </div>
+                        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesan%20las%20Bases%20Especiales%20con%20mi%20logo" target="_blank" class="btn btn-whatsapp product-btn">
+                            Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Producto 11: Bases Circulares para Repostería -->
+                <div class="product-card" data-category="apliques" data-name="bases circulares reposteria cake boards mdf acrilico logo marca">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Repostería & Marca</span>
+                        <img src="bases_circulares_para_reposteria.jpeg" alt="Bases Circulares para Repostería" class="product-img" onerror="this.src='icon.png'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Bases Circulares para Repostería</h3>
+                        <p class="product-specs">Corte circular perfecto | Grabado de logo personalizado | MDF laminado blanco alta resistencia</p>
+                        <div class="product-prices">
+                            <span class="price-detal">Cotizar <small>según medida</small></span>
+                            <span class="price-wholesale">Descuento <small>por mayor</small></span>
+                        </div>
+                        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesan%20las%20Bases%20Circulares%20para%20Reposter%C3%ADa%20con%20mi%20logo" target="_blank" class="btn btn-whatsapp product-btn">
+                            Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Producto 12: Madero Boho Chic Mini -->
+                <div class="product-card" data-category="boho" data-name="madero boho chic mini madera pino acrilico espejo foto florero">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Línea Boho</span>
+                        <img src="madera_boho_chic_mini.jpeg" alt="Madero Boho Chic Mini" class="product-img" onerror="this.src='icon.png'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Madero Boho Chic Mini</h3>
+                        <p class="product-specs">Madera pino y acrílico espejo | 11 cm de ancho | Incluye florero mini decorativo</p>
+                        <div class="product-prices">
+                            <span class="price-detal">$20.000 <small>und</small></span>
+                            <span class="price-wholesale">$18.000 <small>x 6+ und</small></span>
+                        </div>
+                        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20el%20Madero%20Boho%20Chic%20Mini" target="_blank" class="btn btn-whatsapp product-btn">
+                            Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Producto 13: Madero Boho Chic Mini Sencillo -->
+                <div class="product-card" data-category="boho" data-name="madero boho chic mini sencillo madera pino acrilico espejo regalo mama">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Línea Boho</span>
+                        <img src="madera_boho_chic_mini_2.png" alt="Madero Boho Chic Mini Sencillo" class="product-img" onerror="this.src='icon.png'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Madero Boho Chic Mini Sencillo</h3>
+                        <p class="product-specs">Madera pino y acrílico espejo | 11 cm de ancho | Grabado botánico y mensaje</p>
+                        <div class="product-prices">
+                            <span class="price-detal">$18.000 <small>und</small></span>
+                            <span class="price-wholesale">$16.000 <small>x 6+ und</small></span>
+                        </div>
+                        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20el%20Madero%20Boho%20Chic%20Mini%20Sencillo" target="_blank" class="btn btn-whatsapp product-btn">
+                            Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Producto 14: Madero Boho Chic Grande -->
+                <div class="product-card" data-category="boho" data-name="madero boho chic grande madera pino acrilico espejo foto florero vela">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Línea Boho</span>
+                        <img src="madera_boho_chic_mediano.png" alt="Madero Boho Chic Grande" class="product-img" onerror="this.src='icon.png'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Madero Boho Chic Grande</h3>
+                        <p class="product-specs">Madera pino y acrílico espejo | 25 cm de ancho | Incluye florero mini y espacio para vela</p>
+                        <div class="product-prices">
+                            <span class="price-detal">$40.000 <small>und</small></span>
+                            <span class="price-wholesale">$35.000 <small>x 6+ und</small></span>
+                        </div>
+                        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20el%20Madero%20Boho%20Chic%20Grande" target="_blank" class="btn btn-whatsapp product-btn">
+                            Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Producto 15: Madero Boho Chic Solitarios -->
+                <div class="product-card" data-category="boho" data-name="madero boho chic solitarios madera pino florero flores botella 11cm 5cm">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Línea Boho</span>
+                        <img src="madera_boho_chic_solitarios.png" alt="Madero Boho Chic Solitarios" class="product-img" onerror="this.src='icon.png'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Madero Boho Chic Solitarios</h3>
+                        <p class="product-specs">Madera pino | Incluye botella de vidrio y flores | Ref: 11 cm y 5 cm</p>
+                        <div class="product-prices">
+                            <span class="price-detal">$8.000 <small>5 cm</small></span>
+                            <span class="price-wholesale">$16.000 <small>11 cm</small></span>
+                        </div>
+                        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesan%20los%20Maderos%20Boho%20Chic%20Solitarios" target="_blank" class="btn btn-whatsapp product-btn">
+                            Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Producto 16: Diseños en Acrílico Espejo -->
+                <div class="product-card" data-category="acrilicos apliques" data-name="disenos acrilicos espejo placas grabado laser orgánico arco personalizado">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Acrílico Espejo</span>
+                        <img src="diseños_acrilicos.png" alt="Diseños en Acrílico Espejo Personalizados" class="product-img" onerror="this.src='icon.png'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Diseños en Acrílico Espejo</h3>
+                        <p class="product-specs">Formas orgánicas, arcos y curvas | Grabado láser personalizado | Sujeto a disponibilidad de color</p>
+                        <div class="product-prices">
+                            <span class="price-detal">Cotizar <small>según medida</small></span>
+                            <span class="price-wholesale">Descuento <small>por mayor</small></span>
+                        </div>
+                        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesan%20los%20Dise%C3%B1os%20en%20Acr%C3%ADlico%20Espejo%20personalizados" target="_blank" class="btn btn-whatsapp product-btn">
+                            Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Producto 17: Tarjeta Porta Billetes en Acrílico -->
+                <div class="product-card" data-category="apliques temporada" data-name="tarjeta billetes porta dinero acrilico espejo grabado regalo mama">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Detalles & Regalos</span>
+                        <img src="tarjeta_billetes.png" alt="Tarjeta Porta Billetes en Acrílico" class="product-img" onerror="this.src='icon.png'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Tarjeta Porta Billetes en Acrílico</h3>
+                        <p class="product-specs">Acrílico espejo | Grabado de mensajes especiales | Incluye espacio para lazo y billete</p>
+                        <div class="product-prices">
+                            <span class="price-detal">$10.000 <small>und</small></span>
+                            <span class="price-wholesale">$8.000 <small>x 12+ und</small></span>
+                        </div>
+                        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesan%20las%20Tarjetas%20Porta%20Billetes%20en%20Acr%C3%ADlico" target="_blank" class="btn btn-whatsapp product-btn">
+                            Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Producto 18: Monedas y Apliques Acrílicos -->
+                <div class="product-card" data-category="apliques temporada" data-name="monedas apliques acrilicos tags etiquetas dije espejo grabado mama feliz dia 5cm">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Apliques & Tags</span>
+                        <img src="monedas_apliques_acrilicos.png" alt="Monedas y Apliques Acrílicos" class="product-img" onerror="this.src='icon.png'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Monedas y Apliques Acrílicos</h3>
+                        <p class="product-specs">Acrílico espejo | Tamaño: 5 cm | Formas circulares, tags y corazones con grabado láser</p>
+                        <div class="product-prices">
+                            <span class="price-detal">$2.200 <small>und</small></span>
+                            <span class="price-wholesale">$1.800 <small>por mayor</small></span>
+                        </div>
+                        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesan%20las%20Monedas%20y%20Apliques%20Acr%C3%ADlicos" target="_blank" class="btn btn-whatsapp product-btn">
+                            Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
 
             </div>
 
-            <!-- Descarga de Catálogos Completos -->
+            <!-- Paginación dinámica -->
+            <div class="pagination-container" id="paginationContainer"></div>
+
+            <!-- Caja de Descargas -->
             <div class="catalog-download-box">
-                <h3>¿Prefieres ver el catálogo completo en PDF?</h3>
-                <p>Descarga nuestros catálogos ilustrados para revisar todos los modelos y precios disponibles:</p>
+                <h3>¿Quieres consultar o descargar más información?</h3>
+                <p>Contáctanos directamente para solicitar nuestro catálogo completo en PDF o cotizar proyectos especiales.</p>
                 <div class="download-buttons">
-                    <a href="CATALOGO_NAVIDAD_ALTIVA_LASER.pdf" download target="_blank" class="btn btn-primary">
-                        📄 Catálogo Navidad (PDF)
-                    </a>
-                    <a href="CATALOGO_MADRES_ALTIVA_LASER.pdf" download target="_blank" class="btn btn-map">
-                        📄 Catálogo Día de las Madres (PDF)
+                    <a href="https://wa.me/573013609709?text=Hola%21%20Me%20gustar%C3%ADa%20solicitar%20el%20cat%C3%A1logo%20en%20PDF%20de%20Altiva%20L%C3%A1ser" target="_blank" class="btn btn-whatsapp">
+                        Solicitar Catálogo PDF por WhatsApp
                     </a>
                 </div>
-            </div>
-        </div>
-
-        <!-- Pestaña Quiénes Somos -->
-        <div id="quienessomos" class="tab-content">
-            <div class="about-card">
-                <h2 class="section-title-center">Nuestra Historia</h2>
-                
-                <div class="mv-grid">
-                    <div class="mv-box">
-                        <h3 class="mv-title">🎯 Misión</h3>
-                        <p class="mv-text">
-                            Transformar momentos especiales en recuerdos tangibles mediante el diseño y fabricación de piezas personalizadas en madera y acrílico con alta precisión láser.
-                        </p>
-                    </div>
-                    <div class="mv-box">
-                        <h3 class="mv-title">🚀 Visión</h3>
-                        <p class="mv-text">
-                            Ser la marca referente en corte y grabado láser por nuestro estilo artesanal, innovación en empaques de lujo y excelencia en servicio.
-                        </p>
-                    </div>
-                </div>
-
-                <h2 class="section-title-center" style="margin-top: 40px;">Detrás de la Marca</h2>
-                <p class="section-subtitle-center">El equipo que hace posible la magia</p>
-
-                <div class="team-grid">
-                    <div class="team-card">
-                        <img src="dueno1.jpg" alt="Fundadores" class="team-img" onerror="this.src='icon.png'">
-                        <h3 class="team-name">Fundadores</h3>
-                        <p class="team-role">Henry Jaramillo, Paula Vallejo y Maria Paulina Jaramillo</p>
-                        <p class="team-bio">Equipo apasionado por la creación, el diseño técnico y el acabado artesanal de cada proyecto.</p>
-                    </div>
-                </div>
-
-                <h2 class="section-title-center" style="margin-top: 45px;">Nuestro Taller en Acción</h2>
-                <p class="section-subtitle-center">Un vistazo a nuestro proceso de producción</p>
             </div>
         </div>
 
         <!-- Pestaña Contacto -->
         <div id="contacto" class="tab-content">
             <div class="contact-container">
-                <h2 class="contact-title">¿Tienes un pedido especial?</h2>
-                <p class="contact-subtitle">Contáctanos directamente para cotizaciones al por mayor o diseños personalizados.</p>
+                <h2 class="contact-title">¡Hablemos de tu Proyecto!</h2>
+                <p class="contact-subtitle">Estamos listos para hacer realidad tus ideas en acrílico y corte láser</p>
 
                 <div class="contact-buttons">
-                    <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20m%C3%A1s%20informaci%C3%B3n%20sobre..." target="_blank" class="btn btn-whatsapp">
-                        Escribir por WhatsApp
+                    <a href="https://wa.me/573013609709?text=Hola%21%20Vengo%20desde%20la%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20hacer%20una%20consulta" target="_blank" class="btn btn-whatsapp">
+                        Escribir por WhatsApp (+57 301 360 9709)
                     </a>
-
-                    <a href="https://www.instagram.com/altivalaser_oficial?mdxt=MXVxb3d1bzI1NDhzcQ==" target="_blank" class="btn btn-instagram">
-                        Ver en Instagram
+                    <a href="https://instagram.com/altivalaser" target="_blank" class="btn btn-instagram">
+                        Síguenos en Instagram (@altivalaser)
                     </a>
                 </div>
+
                 <div class="location-box">
-                    <h3 class="location-title">📍 Visítanos</h3>
-                    <p class="location-address">Carrera 50A #92-46, Aranjuez</p>
-                    <a href="https://maps.google.com/?q=Carrera+50A+%2392-46,+Aranjuez" target="_blank" class="btn btn-map">
-                        Abrir en Google Maps
+                    <h3 class="location-title">📍 Punto de Atención & Taller</h3>
+                    <p class="location-address">Medellín, Colombia</p>
+                    <a href="https://wa.me/573013609709?text=Hola%21%20Deseo%20conocer%20la%20ubicaci%C3%B3n%20para%20recoger%20un%20pedido" target="_blank" class="btn btn-map">
+                        Consultar Ubicación Exacta
                     </a>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- JavaScript Unificado -->
     <script>
         function showTab(tabId) {
             const tabs = document.querySelectorAll('.tab-content');
@@ -1230,9 +1140,12 @@
         }
 
         let currentCategory = 'todos';
+        let currentPage = 1;
+        const itemsPerPage = 9; // Cantidad de productos por página (3 filas x 3 columnas)
 
         function filterCategory(category, btnElement) {
             currentCategory = category;
+            currentPage = 1; // Volver a la página 1 al cambiar de categoría
             const buttons = document.querySelectorAll('.btn-filter');
             buttons.forEach(btn => btn.classList.remove('active'));
             btnElement.classList.add('active');
@@ -1242,21 +1155,77 @@
         function filterProducts() {
             const searchInput = document.getElementById('catalogSearch');
             const searchText = searchInput ? searchInput.value.toLowerCase() : '';
-            const cards = document.querySelectorAll('.product-card');
+            const cards = Array.from(document.querySelectorAll('.product-card'));
 
-            cards.forEach(card => {
+            // 1. Filtrar productos por búsqueda y categoría
+            const matchingCards = cards.filter(card => {
                 const cardCategories = card.getAttribute('data-category') || '';
                 const cardName = card.getAttribute('data-name') || '';
                 const matchesCategory = currentCategory === 'todos' || cardCategories.includes(currentCategory);
                 const matchesSearch = cardName.includes(searchText);
-
-                if (matchesCategory && matchesSearch) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
+                return matchesCategory && matchesSearch;
             });
+
+            // 2. Ocultar todos los productos
+            cards.forEach(card => card.style.display = 'none');
+
+            // 3. Calcular total de páginas
+            const totalPages = Math.ceil(matchingCards.length / itemsPerPage) || 1;
+            if (currentPage > totalPages) currentPage = 1;
+
+            // 4. Mostrar solo los 9 productos correspondientes a la página actual
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const pageCards = matchingCards.slice(startIndex, endIndex);
+
+            pageCards.forEach(card => {
+                card.style.display = 'flex';
+            });
+
+            // 5. Renderizar los botones de numeración de páginas
+            renderPagination(totalPages);
         }
+
+        function renderPagination(totalPages) {
+            const container = document.getElementById('paginationContainer');
+            if (!container) return;
+
+            if (totalPages <= 1) {
+                container.innerHTML = '';
+                return;
+            }
+
+            let html = '';
+
+            // Botón Anterior
+            html += `<button class="btn-page" ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})">❮</button>`;
+
+            // Botones de Páginas (1, 2, 3...)
+            for (let i = 1; i <= totalPages; i++) {
+                html += `<button class="btn-page ${i === currentPage ? 'active' : ''}" onclick="changePage(${i})">${i}</button>`;
+            }
+
+            // Botón Siguiente
+            html += `<button class="btn-page" ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})">❯</button>`;
+
+            container.innerHTML = html;
+        }
+
+        function changePage(page) {
+            currentPage = page;
+            filterProducts();
+            
+            // Desplazamiento suave al inicio de la lista de productos
+            const catalogHeader = document.querySelector('.catalog-header');
+            if (catalogHeader) {
+                catalogHeader.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Ejecutar paginación inicial al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            filterProducts();
+        });
     </script>
 </body>
 </html>
