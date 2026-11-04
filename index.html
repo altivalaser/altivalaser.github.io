@@ -8,7 +8,9 @@
     <link rel="icon" type="image/jpeg" sizes="192x192" href="icon.png?v=3">
     <link rel="apple-touch-icon" href="icon.png?v=3">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
-    
+
+
+<!---------------------------------------------------- CSS ------------------------------------------------------------------------->
     <style>
         * {
             box-sizing: border-box;
@@ -308,9 +310,16 @@
         }
     </style>
 
+
+
+
+<!--------------------------------------------------------------- Java Script ------------------------------------------------------------------------------->
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-r.min.js"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!----------------------------------------------------------------------------------------------------------------------------------------------------------->
 </head>
 <body>
 
@@ -320,7 +329,7 @@
     <div class="nav-links">
         <a onclick="showTab('inicio')">Inicio</a>
         <a onclick="showTab('quienessomos')">Quiénes Somos</a>  
-        <a onclick="showTab('proyectos')">Catálogo</a>
+        <a onclick="showTab('catalogo')">Catálogo</a>
         <a onclick="showTab('contacto')">Contacto</a>
     </div>
 </nav>
@@ -343,10 +352,163 @@
         </div>
 
 <!----------------------------------------------------------------- Pestaña Catálogo -------------------------------------------------------------------------->
-        <div id="catalogo" class="tab-content">
-            
+       <div id="catalogo" class="tab-content">
+    <div class="catalog-header">
+        <h2 class="section-title-center">Nuestro Catálogo</h2>
+        <p class="section-subtitle-center">Explora nuestras piezas en corte y grabado láser personalizadas</p>
+
+        <!-- Barra de Búsqueda -->
+        <div class="search-box">
+            <input type="text" id="catalogSearch" placeholder="🔍 Buscar producto (ej. acrílico, pebetero, caja)..." onkeyup="filterProducts()">
         </div>
 
+        <!-- Nota de Producción -->
+        <div class="notice-box">
+            ⏳ <strong>Nota de producción:</strong> Todos nuestros productos son artesanales y se fabrican bajo pedido. Recomendamos agendar con 5 días de anticipación.
+        </div>
+
+        <!-- Filtros por Categoría -->
+        <div class="filter-container">
+            <button class="btn-filter active" onclick="filterCategory('todos', this)">Todos</button>
+            <button class="btn-filter" onclick="filterCategory('acrilicos', this)">Empaques Acrílicos</button>
+            <button class="btn-filter" onclick="filterCategory('boho', this)">Decoración Boho</button>
+            <button class="btn-filter" onclick="filterCategory('apliques', this)">Detalles & Apliques</button>
+            <button class="btn-filter" onclick="filterCategory('temporada', this)">Especiales</button>
+        </div>
+    </div>
+
+    <!-- Grilla de Productos -->
+    <div class="catalog-grid" id="catalogGrid">
+
+        <!-- Producto 1: Cartera Luxury -->
+        <div class="product-card" data-category="acrilicos" data-name="cartera luxury acrilico regalo">
+            <div class="product-img-wrapper">
+                <span class="product-badge">Acrílico Luxury</span>
+                <img src="cartera-luxury.jpg" alt="Cartera Luxury" class="product-img" onerror="this.src='icon.png'">
+            </div>
+            <div class="product-info">
+                <h3 class="product-title">Cartera Luxury en Acrílico</h3>
+                <p class="product-specs">Con cadena dorada | Ref: 25 x 20 x 13 cm</p>
+                <div class="product-prices">
+                    <span class="price-detal">$35.000 <small>und</small></span>
+                    <span class="price-wholesale">Ref 30x25x12: $45.000</span>
+                </div>
+                <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20pedir%20la%20Cartera%20Luxury%20en%20Acr%C3%ADlico" target="_blank" class="btn btn-whatsapp product-btn">
+                    Pedir por WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <!-- Producto 2: Caja Exhibidora Postres -->
+        <div class="product-card" data-category="acrilicos" data-name="caja exhibidora postres reposteria acrilica">
+            <div class="product-img-wrapper">
+                <span class="product-badge">Uso Comercial</span>
+                <img src="caja-postres.jpg" alt="Exhibidora de Postres" class="product-img" onerror="this.src='icon.png'">
+            </div>
+            <div class="product-info">
+                <h3 class="product-title">Caja Exhibidora de Postres</h3>
+                <p class="product-specs">Acrílico especial uso en frío | 30 x 10 x 10 cm</p>
+                <div class="product-prices">
+                    <span class="price-detal">$45.000 <small>Sin tapa</small></span>
+                    <span class="price-wholesale">$50.000 <small>Con tapa</small></span>
+                </div>
+                <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20la%20Caja%20Exhibidora%20de%20Postres" target="_blank" class="btn btn-whatsapp product-btn">
+                    Pedir por WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <!-- Producto 3: Caja Mix Premium -->
+        <div class="product-card" data-category="acrilicos temporada" data-name="caja mix premium regalo anchetas madera acrilico">
+            <div class="product-img-wrapper">
+                <span class="product-badge">Regalos & Anchetas</span>
+                <img src="caja-mix.jpg" alt="Caja Mix Premium" class="product-img" onerror="this.src='icon.png'">
+            </div>
+            <div class="product-info">
+                <h3 class="product-title">Caja Mix Premium</h3>
+                <p class="product-specs">Madera & Acrílico con asas | 25 x 10 x 10 cm</p>
+                <div class="product-prices">
+                    <span class="price-detal">$25.000 <small>und</small></span>
+                </div>
+                <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20la%20Caja%20Mix%20Premium" target="_blank" class="btn btn-whatsapp product-btn">
+                    Pedir por WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <!-- Producto 4: Maderos Pebetero -->
+        <div class="product-card" data-category="boho temporada" data-name="maderos pebetero madera pino velas boho">
+            <div class="product-img-wrapper">
+                <span class="product-badge">Línea Boho</span>
+                <img src="maderos-pebetero.jpg" alt="Maderos Pebetero" class="product-img" onerror="this.src='fondo-boho.jpg'">
+            </div>
+            <div class="product-info">
+                <h3 class="product-title">Maderos Pebetero (Paquete x6)</h3>
+                <p class="product-specs">Madera pino con apliques mdf / adhesivos | 5 cm</p>
+                <div class="product-prices">
+                    <span class="price-detal">$30.000 <small>/ paquete</small></span>
+                    <span class="price-wholesale">Mayor (x6 paq): $27.000 c/u</span>
+                </div>
+                <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesan%20los%20Maderos%20Pebetero%20x6" target="_blank" class="btn btn-whatsapp product-btn">
+                    Pedir por WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <!-- Producto 5: Calendario Adviento -->
+        <div class="product-card" data-category="boho temporada" data-name="calendario adviento navidad mdf acrilico">
+            <div class="product-img-wrapper">
+                <span class="product-badge">Temporada</span>
+                <img src="adviento.jpg" alt="Calendario de Adviento" class="product-img" onerror="this.src='fondo-boho.jpg'">
+            </div>
+            <div class="product-info">
+                <h3 class="product-title">Calendario de Adviento</h3>
+                <p class="product-specs">MDF con apliques en acrílico espejo | 15 cm</p>
+                <div class="product-prices">
+                    <span class="price-detal">$28.000 <small>und</small></span>
+                    <span class="price-wholesale">Mayor (12+): $25.000</span>
+                </div>
+                <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20el%20Calendario%20de%20Adviento" target="_blank" class="btn btn-whatsapp product-btn">
+                    Pedir por WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <!-- Producto 6: Tarjetas Billetes -->
+        <div class="product-card" data-category="apliques temporada" data-name="tarjetas para billetes dinero regalo acrilico mdf">
+            <div class="product-img-wrapper">
+                <span class="product-badge">Acrílico & MDF</span>
+                <img src="tarjeta-billetes.jpg" alt="Tarjeta para Billetes" class="product-img" onerror="this.src='icon.png'">
+            </div>
+            <div class="product-info">
+                <h3 class="product-title">Tarjeta para Billetes</h3>
+                <p class="product-specs">Diseños personalizados con lazo | 10 x 8 cm</p>
+                <div class="product-prices">
+                    <span class="price-detal">$6.000 <small>MDF</small></span>
+                    <span class="price-wholesale">$10.000 <small>Acrílico Espejo</small></span>
+                </div>
+                <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesan%20las%20Tarjetas%20para%20Billetes" target="_blank" class="btn btn-whatsapp product-btn">
+                    Pedir por WhatsApp
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Descarga de Catálogos Completos -->
+    <div class="catalog-download-box">
+        <h3>¿Prefieres ver el catálogo completo en PDF?</h3>
+        <p>Descarga nuestros catálogos ilustrados para revisar todos los modelos y precios disponibles:</p>
+        <div class="download-buttons">
+            <a href="CATALOGO_NAVIDAD_ALTIVA_LASER.pdf" download target="_blank" class="btn btn-primary">
+                📄 Catálogo Navidad (PDF)
+            </a>
+            <a href="CATALOGO_MADRES_ALTIVA_LASER.pdf" download target="_blank" class="btn btn-map">
+                📄 Catálogo Día de las Madres (PDF)
+            </a>
+        </div>
+    </div>
+</div>
 <!----------------------------------------------------------------- Pestaña Contacto ---------------------------------------------------------------------------->
         <div id="contacto" class="tab-content">
             <div class="contact-container">
