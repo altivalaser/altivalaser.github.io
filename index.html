@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Altiva Láser</title>
-    <link rel="icon" type="image/jpeg" sizes="32x32" href="icon.png?v=3">
-    <link rel="icon" type="image/jpeg" sizes="192x192" href="icon.png?v=3">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon.png?v=3">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon.png?v=3">
     <link rel="apple-touch-icon" href="icon.png?v=3">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 
-
-<!---------------------------------------------------- CSS ------------------------------------------------------------------------->
     <style>
         * {
             box-sizing: border-box;
@@ -32,7 +30,6 @@
             background-color: var(--bg-light);
             color: var(--text-dark);
         }
-
 
         .navbar {
             background: rgba(254, 245, 236, 0.95);
@@ -173,6 +170,104 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Sección de Quiénes Somos */
+        .about-card {
+            background: white;
+            padding: 45px 35px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .section-title-center {
+            text-align: center;
+            font-size: 1.9rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle-center {
+            text-align: center;
+            color: #666;
+            margin-bottom: 35px;
+            font-size: 0.95rem;
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 35px 0;
+        }
+
+        .mv-box {
+            background: #F7ECE1;
+            padding: 30px;
+            border-radius: 16px;
+            border-left: 5px solid var(--primary);
+        }
+
+        .mv-title {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .mv-text {
+            line-height: 1.6;
+            color: #5A493E;
+            font-size: 0.95rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .team-card {
+            background: #FEF5EC;
+            border-radius: 16px;
+            overflow: hidden;
+            text-align: center;
+            padding: 25px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+        }
+
+        .team-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px;
+            border: 3px solid var(--primary);
+        }
+
+        .team-name {
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .team-role {
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .team-bio {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
         /* Sección de Contacto */
         .contact-container {
             max-width: 650px;
@@ -256,62 +351,7 @@
             transform: translateY(-2px);
         }
 
-        /* Adaptación automática para pantallas móviles (Celulares) */
-        @media (max-width: 768px) {
-            body {
-                padding-top: 110px;
-            }
-
-            .navbar {
-                padding: 0.8rem 1rem;
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .nav-links {
-                gap: 15px;
-            }
-
-            .nav-links a {
-                font-size: 0.9rem;
-                padding: 4px 8px;
-            }
-
-            .container {
-                padding: 0 12px;
-                margin-top: 15px;
-            }
-
-            .hero-main {
-                padding: 45px 15px;
-            }
-
-            .hero-logo-icon {
-                width: 110px;
-                height: 110px;
-            }
-
-            .hero-title {
-                font-size: 1.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.3rem;
-            }
-
-            .contact-container {
-                padding: 30px 18px;
-            }
-
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-
-
-/* ESTILOS DE BUSCADOR Y CATÁLOGO       */
-    
+        /* Estilos del Catálogo */
         .catalog-header {
             text-align: center;
             margin-bottom: 30px;
@@ -511,24 +551,318 @@
             flex-wrap: wrap;
         }
 
+        /* Adaptación móvil */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 110px;
+            }
 
+            .navbar {
+                padding: 0.8rem 1rem;
+                flex-direction: column;
+                gap: 10px;
+            }
 
-        
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 0.9rem;
+                padding: 4px 8px;
+            }
+
+            .container {
+                padding: 0 12px;
+                margin-top: 15px;
+            }
+
+            .hero-main {
+                padding: 45px 15px;
+            }
+
+            .hero-logo-icon {
+                width: 110px;
+                height: 110px;
+            }
+
+            .hero-title {
+                font-size: 1.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+
+            .mv-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                padding: 30px 18px;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
     </style>
+</head>
+<body>
 
-
-
-
-<!--------------------------------------------------------------- Java Script ------------------------------------------------------------------------------->
+    <!-- Navegación -->
+    <nav class="navbar">
+        <a href="#" class="logo">ALTIVA LÁSER</a>
+        <div class="nav-links">
+            <a onclick="showTab('inicio')">Inicio</a>
+            <a onclick="showTab('quienessomos')">Quiénes Somos</a>  
+            <a onclick="showTab('catalogo')">Catálogo</a>
+            <a onclick="showTab('contacto')">Contacto</a>
+        </div>
+    </nav>
     
-    <!-- Librerías opcionales (puedes dejarlas o quitarlas si no las usas) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-r.min.js"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <main class="container">
+        <!-- Pestaña Inicio -->
+        <div id="inicio" class="tab-content active">
+            <section class="hero-main">
+                <img src="icon.png" alt="Logo Altiva Láser" class="hero-logo-icon">
+                
+                <h1 class="hero-title">Bienvenidos a Altiva Láser</h1>
+                <h2 class="hero-subtitle">- Le damos forma a tus ideas -</h2>
+                
+                <p class="hero-description">
+                    Calidad que se ve, detalles que enamoran. Diseñamos y fabricamos piezas exclusivas en corte y grabado láser personalizadas para tus eventos y proyectos.
+                </p>
 
-    <!-- Código JavaScript del sitio -->
+                <button class="btn btn-primary" onclick="showTab('catalogo')">VER CATÁLOGO</button>
+            </section>
+        </div>
+
+        <!-- Pestaña Catálogo -->
+        <div id="catalogo" class="tab-content">
+            <div class="catalog-header">
+                <h2 class="section-title-center">Nuestro Catálogo</h2>
+                <p class="section-subtitle-center">Explora nuestras piezas en corte y grabado láser personalizadas</p>
+
+                <!-- Barra de Búsqueda -->
+                <div class="search-box">
+                    <input type="text" id="catalogSearch" placeholder="🔍 Buscar producto (ej. acrílico, pebetero, caja)..." onkeyup="filterProducts()">
+                </div>
+
+                <!-- Nota de Producción -->
+                <div class="notice-box">
+                    ⏳ <strong>Nota de producción:</strong> Todos nuestros productos son artesanales y se fabrican bajo pedido. Recomendamos agendar con 5 días de anticipación.
+                </div>
+
+                <!-- Filtros por Categoría -->
+                <div class="filter-container">
+                    <button class="btn-filter active" onclick="filterCategory('todos', this)">Todos</button>
+                    <button class="btn-filter" onclick="filterCategory('acrilicos', this)">Empaques Acrílicos</button>
+                    <button class="btn-filter" onclick="filterCategory('boho', this)">Decoración Boho</button>
+                    <button class="btn-filter" onclick="filterCategory('apliques', this)">Detalles & Apliques</button>
+                    <button class="btn-filter" onclick="filterCategory('temporada', this)">Especiales</button>
+                </div>
+            </div>
+
+            <!-- Grilla de Productos -->
+            <div class="catalog-grid" id="catalogGrid">
+
+                <!-- Producto 1: Cartera Luxury -->
+                <div class="product-card" data-category="acrilicos" data-name="cartera luxury acrilico regalo">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Acrílico Luxury</span>
+                        <img src="cartera-luxury.jpg" alt="Cartera Luxury" class="product-img" onerror="this.src='icon.png'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Cartera Luxury en Acrílico</h3>
+                        <p class="product-specs">Con cadena dorada | Ref: 25 x 20 x 13 cm</p>
+                        <div class="product-prices">
+                            <span class="price-detal">$35.000 <small>und</small></span>
+                            <span class="price-wholesale">Ref 30x25x12: $45.000</span>
+                        </div>
+                        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20pedir%20la%20Cartera%20Luxury%20en%20Acr%C3%ADlico" target="_blank" class="btn btn-whatsapp product-btn">
+                            Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Producto 2: Caja Exhibidora Postres -->
+                <div class="product-card" data-category="acrilicos" data-name="caja exhibidora postres reposteria acrilica">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Uso Comercial</span>
+                        <img src="caja-postres.jpg" alt="Exhibidora de Postres" class="product-img" onerror="this.src='icon.png'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Caja Exhibidora de Postres</h3>
+                        <p class="product-specs">Acrílico especial uso en frío | 30 x 10 x 10 cm</p>
+                        <div class="product-prices">
+                            <span class="price-detal">$45.000 <small>Sin tapa</small></span>
+                            <span class="price-wholesale">$50.000 <small>Con tapa</small></span>
+                        </div>
+                        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20la%20Caja%20Exhibidora%20de%20Postres" target="_blank" class="btn btn-whatsapp product-btn">
+                            Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Producto 3: Caja Mix Premium -->
+                <div class="product-card" data-category="acrilicos temporada" data-name="caja mix premium regalo anchetas madera acrilico">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Regalos & Anchetas</span>
+                        <img src="caja-mix.jpg" alt="Caja Mix Premium" class="product-img" onerror="this.src='icon.png'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Caja Mix Premium</h3>
+                        <p class="product-specs">Madera & Acrílico con asas | 25 x 10 x 10 cm</p>
+                        <div class="product-prices">
+                            <span class="price-detal">$25.000 <small>und</small></span>
+                        </div>
+                        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20la%20Caja%20Mix%20Premium" target="_blank" class="btn btn-whatsapp product-btn">
+                            Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Producto 4: Maderos Pebetero -->
+                <div class="product-card" data-category="boho temporada" data-name="maderos pebetero madera pino velas boho">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Línea Boho</span>
+                        <img src="maderos-pebetero.jpg" alt="Maderos Pebetero" class="product-img" onerror="this.src='fondo-boho.jpg'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Maderos Pebetero (Paquete x6)</h3>
+                        <p class="product-specs">Madera pino con apliques mdf / adhesivos | 5 cm</p>
+                        <div class="product-prices">
+                            <span class="price-detal">$30.000 <small>/ paquete</small></span>
+                            <span class="price-wholesale">Mayor (x6 paq): $27.000 c/u</span>
+                        </div>
+                        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesan%20los%20Maderos%20Pebetero%20x6" target="_blank" class="btn btn-whatsapp product-btn">
+                            Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Producto 5: Calendario Adviento -->
+                <div class="product-card" data-category="boho temporada" data-name="calendario adviento navidad mdf acrilico">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Temporada</span>
+                        <img src="adviento.jpg" alt="Calendario de Adviento" class="product-img" onerror="this.src='fondo-boho.jpg'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Calendario de Adviento</h3>
+                        <p class="product-specs">MDF con apliques en acrílico espejo | 15 cm</p>
+                        <div class="product-prices">
+                            <span class="price-detal">$28.000 <small>und</small></span>
+                            <span class="price-wholesale">Mayor (12+): $25.000</span>
+                        </div>
+                        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20el%20Calendario%20de%20Adviento" target="_blank" class="btn btn-whatsapp product-btn">
+                            Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Producto 6: Tarjetas Billetes -->
+                <div class="product-card" data-category="apliques temporada" data-name="tarjetas para billetes dinero regalo acrilico mdf">
+                    <div class="product-img-wrapper">
+                        <span class="product-badge">Acrílico & MDF</span>
+                        <img src="tarjeta-billetes.jpg" alt="Tarjeta para Billetes" class="product-img" onerror="this.src='icon.png'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Tarjeta para Billetes</h3>
+                        <p class="product-specs">Diseños personalizados con lazo | 10 x 8 cm</p>
+                        <div class="product-prices">
+                            <span class="price-detal">$6.000 <small>MDF</small></span>
+                            <span class="price-wholesale">$10.000 <small>Acrílico Espejo</small></span>
+                        </div>
+                        <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesan%20las%20Tarjetas%20para%20Billetes" target="_blank" class="btn btn-whatsapp product-btn">
+                            Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Descarga de Catálogos Completos -->
+            <div class="catalog-download-box">
+                <h3>¿Prefieres ver el catálogo completo en PDF?</h3>
+                <p>Descarga nuestros catálogos ilustrados para revisar todos los modelos y precios disponibles:</p>
+                <div class="download-buttons">
+                    <a href="CATALOGO_NAVIDAD_ALTIVA_LASER.pdf" download target="_blank" class="btn btn-primary">
+                        📄 Catálogo Navidad (PDF)
+                    </a>
+                    <a href="CATALOGO_MADRES_ALTIVA_LASER.pdf" download target="_blank" class="btn btn-map">
+                        📄 Catálogo Día de las Madres (PDF)
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pestaña Quiénes Somos -->
+        <div id="quienessomos" class="tab-content">
+            <div class="about-card">
+                <h2 class="section-title-center">Nuestra Historia</h2>
+                
+                <div class="mv-grid">
+                    <div class="mv-box">
+                        <h3 class="mv-title">🎯 Misión</h3>
+                        <p class="mv-text">
+                            Transformar momentos especiales en recuerdos tangibles mediante el diseño y fabricación de piezas personalizadas en madera y acrílico con alta precisión láser.
+                        </p>
+                    </div>
+                    <div class="mv-box">
+                        <h3 class="mv-title">🚀 Visión</h3>
+                        <p class="mv-text">
+                            Ser la marca referente en corte y grabado láser por nuestro estilo artesanal, innovación en empaques de lujo y excelencia en servicio.
+                        </p>
+                    </div>
+                </div>
+
+                <h2 class="section-title-center" style="margin-top: 40px;">Detrás de la Marca</h2>
+                <p class="section-subtitle-center">El equipo que hace posible la magia</p>
+
+                <div class="team-grid">
+                    <div class="team-card">
+                        <img src="dueno1.jpg" alt="Fundadores" class="team-img" onerror="this.src='icon.png'">
+                        <h3 class="team-name">Fundadores</h3>
+                        <p class="team-role">Henry Jaramillo, Paula Vallejo y Maria Paulina Jaramillo</p>
+                        <p class="team-bio">Equipo apasionado por la creación, el diseño técnico y el acabado artesanal de cada proyecto.</p>
+                    </div>
+                </div>
+
+                <h2 class="section-title-center" style="margin-top: 45px;">Nuestro Taller en Acción</h2>
+                <p class="section-subtitle-center">Un vistazo a nuestro proceso de producción</p>
+            </div>
+        </div>
+
+        <!-- Pestaña Contacto -->
+        <div id="contacto" class="tab-content">
+            <div class="contact-container">
+                <h2 class="contact-title">¿Tienes un pedido especial?</h2>
+                <p class="contact-subtitle">Contáctanos directamente para cotizaciones al por mayor o diseños personalizados.</p>
+
+                <div class="contact-buttons">
+                    <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20m%C3%A1s%20informaci%C3%B3n%20sobre..." target="_blank" class="btn btn-whatsapp">
+                        Escribir por WhatsApp
+                    </a>
+
+                    <a href="https://www.instagram.com/altivalaser_oficial?mdxt=MXVxb3d1bzI1NDhzcQ==" target="_blank" class="btn btn-instagram">
+                        Ver en Instagram
+                    </a>
+                </div>
+                <div class="location-box">
+                    <h3 class="location-title">📍 Visítanos</h3>
+                    <p class="location-address">Carrera 50A #92-46, Aranjuez</p>
+                    <a href="https://maps.google.com/?q=Carrera+50A+%2392-46,+Aranjuez" target="_blank" class="btn btn-map">
+                        Abrir en Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript Unificado -->
     <script>
-        // Función para cambiar de pestaña (Inicio, Quiénes Somos, Catálogo, Contacto)
         function showTab(tabId) {
             const tabs = document.querySelectorAll('.tab-content');
             tabs.forEach(tab => tab.classList.remove('active'));
@@ -539,7 +873,6 @@
             }
         }
 
-        // Variables y funciones del Catálogo (Filtros + Buscador)
         let currentCategory = 'todos';
 
         function filterCategory(category, btnElement) {
@@ -569,281 +902,5 @@
             });
         }
     </script>
-
-<!----------------------------------------------------------------------------------------------------------------------------------------------------------->
-</head>
-<body>
-
-<!------------------------------------------------------------------- Navegación --------------------------------------------------------------------------->
-    <nav class="navbar">
-    <a href="#" class="logo">ALTIVA LÁSER</a>
-    <div class="nav-links">
-        <a onclick="showTab('inicio')">Inicio</a>
-        <a onclick="showTab('quienessomos')">Quiénes Somos</a>  
-        <a onclick="showTab('catalogo')">Catálogo</a>
-        <a onclick="showTab('contacto')">Contacto</a>
-    </div>
-</nav>
-    
-    <main class="container">
-<!---------------------------------------------------------------- Pestaña Inicio -------------------------------------------------------------------------->
-        <div id="inicio" class="tab-content active">
-            <section class="hero-main">
-                <img src="icon.png" alt="Logo Altiva Láser" class="hero-logo-icon">
-                
-                <h1 class="hero-title">Bienvenidos a Altiva Láser</h1>
-                <h2 class="hero-subtitle">- Le damos forma a tus ideas -</h2>
-                
-                <p class="hero-description">
-                    aca dejamos el texto sobre la empresa
-                </p>
-
-                <button class="btn btn-primary" onclick="showTab('proyectos')">VER CATÁLOGO</button>
-            </section>
-        </div>
-
-<!----------------------------------------------------------------- Pestaña Catálogo -------------------------------------------------------------------------->
-       <div id="catalogo" class="tab-content">
-    <div class="catalog-header">
-        <h2 class="section-title-center">Nuestro Catálogo</h2>
-        <p class="section-subtitle-center">Explora nuestras piezas en corte y grabado láser personalizadas</p>
-
-        <!-- Barra de Búsqueda -->
-        <div class="search-box">
-            <input type="text" id="catalogSearch" placeholder="🔍 Buscar producto (ej. acrílico, pebetero, caja)..." onkeyup="filterProducts()">
-        </div>
-
-        <!-- Nota de Producción -->
-        <div class="notice-box">
-            ⏳ <strong>Nota de producción:</strong> Todos nuestros productos son artesanales y se fabrican bajo pedido. Recomendamos agendar con 5 días de anticipación.
-        </div>
-
-        <!-- Filtros por Categoría -->
-        <div class="filter-container">
-            <button class="btn-filter active" onclick="filterCategory('todos', this)">Todos</button>
-            <button class="btn-filter" onclick="filterCategory('acrilicos', this)">Empaques Acrílicos</button>
-            <button class="btn-filter" onclick="filterCategory('boho', this)">Decoración Boho</button>
-            <button class="btn-filter" onclick="filterCategory('apliques', this)">Detalles & Apliques</button>
-            <button class="btn-filter" onclick="filterCategory('temporada', this)">Especiales</button>
-        </div>
-    </div>
-
-    <!-- Grilla de Productos -->
-    <div class="catalog-grid" id="catalogGrid">
-
-        <!-- Producto 1: Cartera Luxury -->
-        <div class="product-card" data-category="acrilicos" data-name="cartera luxury acrilico regalo">
-            <div class="product-img-wrapper">
-                <span class="product-badge">Acrílico Luxury</span>
-                <img src="cartera-luxury.jpg" alt="Cartera Luxury" class="product-img" onerror="this.src='icon.png'">
-            </div>
-            <div class="product-info">
-                <h3 class="product-title">Cartera Luxury en Acrílico</h3>
-                <p class="product-specs">Con cadena dorada | Ref: 25 x 20 x 13 cm</p>
-                <div class="product-prices">
-                    <span class="price-detal">$35.000 <small>und</small></span>
-                    <span class="price-wholesale">Ref 30x25x12: $45.000</span>
-                </div>
-                <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20pedir%20la%20Cartera%20Luxury%20en%20Acr%C3%ADlico" target="_blank" class="btn btn-whatsapp product-btn">
-                    Pedir por WhatsApp
-                </a>
-            </div>
-        </div>
-
-        <!-- Producto 2: Caja Exhibidora Postres -->
-        <div class="product-card" data-category="acrilicos" data-name="caja exhibidora postres reposteria acrilica">
-            <div class="product-img-wrapper">
-                <span class="product-badge">Uso Comercial</span>
-                <img src="caja-postres.jpg" alt="Exhibidora de Postres" class="product-img" onerror="this.src='icon.png'">
-            </div>
-            <div class="product-info">
-                <h3 class="product-title">Caja Exhibidora de Postres</h3>
-                <p class="product-specs">Acrílico especial uso en frío | 30 x 10 x 10 cm</p>
-                <div class="product-prices">
-                    <span class="price-detal">$45.000 <small>Sin tapa</small></span>
-                    <span class="price-wholesale">$50.000 <small>Con tapa</small></span>
-                </div>
-                <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20la%20Caja%20Exhibidora%20de%20Postres" target="_blank" class="btn btn-whatsapp product-btn">
-                    Pedir por WhatsApp
-                </a>
-            </div>
-        </div>
-
-        <!-- Producto 3: Caja Mix Premium -->
-        <div class="product-card" data-category="acrilicos temporada" data-name="caja mix premium regalo anchetas madera acrilico">
-            <div class="product-img-wrapper">
-                <span class="product-badge">Regalos & Anchetas</span>
-                <img src="caja-mix.jpg" alt="Caja Mix Premium" class="product-img" onerror="this.src='icon.png'">
-            </div>
-            <div class="product-info">
-                <h3 class="product-title">Caja Mix Premium</h3>
-                <p class="product-specs">Madera & Acrílico con asas | 25 x 10 x 10 cm</p>
-                <div class="product-prices">
-                    <span class="price-detal">$25.000 <small>und</small></span>
-                </div>
-                <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20la%20Caja%20Mix%20Premium" target="_blank" class="btn btn-whatsapp product-btn">
-                    Pedir por WhatsApp
-                </a>
-            </div>
-        </div>
-
-        <!-- Producto 4: Maderos Pebetero -->
-        <div class="product-card" data-category="boho temporada" data-name="maderos pebetero madera pino velas boho">
-            <div class="product-img-wrapper">
-                <span class="product-badge">Línea Boho</span>
-                <img src="maderos-pebetero.jpg" alt="Maderos Pebetero" class="product-img" onerror="this.src='fondo-boho.jpg'">
-            </div>
-            <div class="product-info">
-                <h3 class="product-title">Maderos Pebetero (Paquete x6)</h3>
-                <p class="product-specs">Madera pino con apliques mdf / adhesivos | 5 cm</p>
-                <div class="product-prices">
-                    <span class="price-detal">$30.000 <small>/ paquete</small></span>
-                    <span class="price-wholesale">Mayor (x6 paq): $27.000 c/u</span>
-                </div>
-                <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesan%20los%20Maderos%20Pebetero%20x6" target="_blank" class="btn btn-whatsapp product-btn">
-                    Pedir por WhatsApp
-                </a>
-            </div>
-        </div>
-
-        <!-- Producto 5: Calendario Adviento -->
-        <div class="product-card" data-category="boho temporada" data-name="calendario adviento navidad mdf acrilico">
-            <div class="product-img-wrapper">
-                <span class="product-badge">Temporada</span>
-                <img src="adviento.jpg" alt="Calendario de Adviento" class="product-img" onerror="this.src='fondo-boho.jpg'">
-            </div>
-            <div class="product-info">
-                <h3 class="product-title">Calendario de Adviento</h3>
-                <p class="product-specs">MDF con apliques en acrílico espejo | 15 cm</p>
-                <div class="product-prices">
-                    <span class="price-detal">$28.000 <small>und</small></span>
-                    <span class="price-wholesale">Mayor (12+): $25.000</span>
-                </div>
-                <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20el%20Calendario%20de%20Adviento" target="_blank" class="btn btn-whatsapp product-btn">
-                    Pedir por WhatsApp
-                </a>
-            </div>
-        </div>
-
-        <!-- Producto 6: Tarjetas Billetes -->
-        <div class="product-card" data-category="apliques temporada" data-name="tarjetas para billetes dinero regalo acrilico mdf">
-            <div class="product-img-wrapper">
-                <span class="product-badge">Acrílico & MDF</span>
-                <img src="tarjeta-billetes.jpg" alt="Tarjeta para Billetes" class="product-img" onerror="this.src='icon.png'">
-            </div>
-            <div class="product-info">
-                <h3 class="product-title">Tarjeta para Billetes</h3>
-                <p class="product-specs">Diseños personalizados con lazo | 10 x 8 cm</p>
-                <div class="product-prices">
-                    <span class="price-detal">$6.000 <small>MDF</small></span>
-                    <span class="price-wholesale">$10.000 <small>Acrílico Espejo</small></span>
-                </div>
-                <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesan%20las%20Tarjetas%20para%20Billetes" target="_blank" class="btn btn-whatsapp product-btn">
-                    Pedir por WhatsApp
-                </a>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Descarga de Catálogos Completos -->
-    <div class="catalog-download-box">
-        <h3>¿Prefieres ver el catálogo completo en PDF?</h3>
-        <p>Descarga nuestros catálogos ilustrados para revisar todos los modelos y precios disponibles:</p>
-        <div class="download-buttons">
-            <a href="CATALOGO_NAVIDAD_ALTIVA_LASER.pdf" download target="_blank" class="btn btn-primary">
-                📄 Catálogo Navidad (PDF)
-            </a>
-            <a href="CATALOGO_MADRES_ALTIVA_LASER.pdf" download target="_blank" class="btn btn-map">
-                📄 Catálogo Día de las Madres (PDF)
-            </a>
-        </div>
-    </div>
-</div>
-<!----------------------------------------------------------------- Pestaña Contacto ---------------------------------------------------------------------------->
-        <div id="contacto" class="tab-content">
-            <div class="contact-container">
-                <h2 class="contact-title">¿Tienes un pedido especial?</h2>
-                <p class="contact-subtitle">Contáctanos directamente para cotizaciones al por mayor o diseños personalizados.</p>
-
-                <div class="contact-buttons">
-                    <a href="https://wa.me/573013609709?text=Hola%21%20Me%20interesa%20m%C3%A1s%20informaci%C3%B3n%20sobre..." target="_blank" class="btn btn-whatsapp">
-                        Escribir por WhatsApp
-                    </a>
-
-                    <a href="https://www.instagram.com/altivalaser_oficial?mdxt=MXVxb3d1bzI1NDhzcQ==" target="_blank" class="btn btn-instagram">
-                        Ver en Instagram
-                    </a>
-                </div>
-                <div class="location-box">
-                    <h3 class="location-title">📍 Visítanos</h3>
-                    <p class="location-address">Carrera 50A #92-46, Aranjuez</p>
-                    <a href="https://maps.google.com/?q=Carrera+50A+%2392-46,+Aranjuez" target="_blank" class="btn btn-map">
-                        Abrir en Google Maps
-                    </a>
-                </div>
-            </div>
-        </div>
-
-
-<!------------------------------------------------------------------- Sección de quiénes somos ----------------------------------------------------------------------->
-
-<div id="quienessomos" class="tab-content">
-    <div class="about-card">
-        <h2 class="section-title-center">Nuestra Historia</h2>
-        
-        <div class="mv-grid">
-            <div class="mv-box">
-                <h3 class="mv-title">🎯 Misión</h3>
-                <p class="mv-text">
-                    aca va la mision
-                </p>
-            </div>
-            <div class="mv-box">
-                <h3 class="mv-title">🚀 Visión</h3>
-                <p class="mv-text">
-                    aca va la vision
-                </p>
-            </div>
-        </div>
-
-        <h2 class="section-title-center" style="margin-top: 40px;">Detrás de la Marca</h2>
-        <p class="section-subtitle-center">El equipo que hace posible la magia</p>
-
-        <div class="team-grid">
-            <div class="team-card">
-                <img src="dueno1.jpg" alt="Fundador" class="team-img" onerror="this.src='icon.png'">
-                <h3 class="team-name">Fundadores</h3>
-                <p class="team-role">Henry Jaramillo, Paula Vallejo y Maria Paulina Jaramillo</p>
-                <p class="team-bio">Aca ponemos algo sobre ustedes.</p>
-            </div>
-            
-        </div>
-
-        <h2 class="section-title-center" style="margin-top: 45px;">Nuestro Taller en Acción</h2>
-        <p class="section-subtitle-center">Un vistazo a nuestro proceso de producción</p>
-
-    </div>
-</div>
-
-
-
-<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-    </main>
-
-    
-
-    <script>
-        function showTab(tabId) {
-            const tabs = document.querySelectorAll('.tab-content');
-            tabs.forEach(tab => tab.classList.remove('active'));
-
-            const selectedTab = document.getElementById(tabId);
-            if (selectedTab) {
-                selectedTab.classList.add('active');
-            }
-        }
-    </script>
-
 </body>
 </html>
