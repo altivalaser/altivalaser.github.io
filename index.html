@@ -7,8 +7,6 @@
     <link rel="icon" type="image/jpeg" sizes="32x32" href="icon.png?v=3">
     <link rel="icon" type="image/jpeg" sizes="192x192" href="icon.png?v=3">
     <link rel="apple-touch-icon" href="icon.png?v=3">
-    
-    <!-- Fuentes -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
     
     <style>
@@ -33,7 +31,7 @@
             color: var(--text-dark);
         }
 
-        /* Barra de Navegación */
+
         .navbar {
             background: rgba(254, 245, 236, 0.95);
             backdrop-filter: blur(8px);
@@ -316,18 +314,19 @@
 </head>
 <body>
 
-    <!-- Navegación -->
+<!------------------------------------------------------------------- Navegación --------------------------------------------------------------------------->
     <nav class="navbar">
         <a href="#" class="logo">ALTIVA LÁSER</a>
         <div class="nav-links">
             <a onclick="showTab('inicio')">Inicio</a>
-            <a onclick="showTab('proyectos')">Catálogo</a>
+            <a onclick="showTab('catalogo')">Catálogo</a>
             <a onclick="showTab('contacto')">Contacto</a>
+            <a onclick="showtab('quienessomos')">Quiénes somos</a>
         </div>
     </nav>
     
     <main class="container">
-        <!-- Pestaña Inicio -->
+<!---------------------------------------------------------------- Pestaña Inicio -------------------------------------------------------------------------->
         <div id="inicio" class="tab-content active">
             <section class="hero-main">
                 <img src="icon.png" alt="Logo Altiva Láser" class="hero-logo-icon">
@@ -343,11 +342,12 @@
             </section>
         </div>
 
-        <!-- Pestaña Catálogo -->
-        <div id="proyectos" class="tab-content">
+<!----------------------------------------------------------------- Pestaña Catálogo -------------------------------------------------------------------------->
+        <div id="catalogo" class="tab-content">
+            
         </div>
 
-        <!-- Pestaña Contacto -->
+<!----------------------------------------------------------------- Pestaña Contacto ---------------------------------------------------------------------------->
         <div id="contacto" class="tab-content">
             <div class="contact-container">
                 <h2 class="contact-title">¿Tienes un pedido especial?</h2>
@@ -362,8 +362,6 @@
                         Ver en Instagram
                     </a>
                 </div>
-
-                <!-- Sección de Ubicación -->
                 <div class="location-box">
                     <h3 class="location-title">📍 Visítanos</h3>
                     <p class="location-address">Carrera 50A #92-46, Aranjuez</p>
@@ -373,7 +371,24 @@
                 </div>
             </div>
         </div>
+
+
+<!------------------------------------------------------------------- Sección de quiénes somos ----------------------------------------------------------------------->
+
+<div id="contacto" class="tab-content">
+    <div class="contact-container">
+
+</div>
+    </div>
+
+
+
+
+
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
     </main>
+
+    
 
     <script>
         function showTab(tabId) {
