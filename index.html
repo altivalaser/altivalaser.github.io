@@ -1,3 +1,4 @@
+<!-- Seccional de encabezado -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,12 +9,14 @@
     <link rel="icon" type="image/png" sizes="192x192" href="icon.png?v=3">
     <link rel="apple-touch-icon" href="icon.png?v=3">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="styles.css">
 </head>
+
+
 <body>
 
-    <!-- Navegación -->
+
+<!-- Navegación ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
     <nav class="navbar">
         <a href="#" class="logo">ALTIVA LÁSER</a>
         <div class="nav-links">
@@ -23,9 +26,10 @@
             <a onclick="showTab('contacto')">Contacto</a>
         </div>
     </nav>
-    
+
+
+<!-- Pestaña Inicio -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
     <main class="container">
-        <!-- Pestaña Inicio -->
         <div id="inicio" class="tab-content active">
             <section class="hero-main">
                 <img src="icon.png" alt="Logo Altiva Láser" class="hero-logo-icon">
@@ -41,55 +45,55 @@
             </section>
         </div>
 
-        <!-- Pestaña Quiénes Somos -->
-<div id="quienessomos" class="tab-content">
-    <div class="about-card">
-        <h2 class="section-title-center">Quiénes Somos</h2>
-        <p class="section-subtitle-center">Conoce la pasión y el diseño detrás de Altiva Láser</p>
+<!-- Pestaña Quiénes Somos ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+        <div id="quienessomos" class="tab-content">
+            <div class="about-card">
+                <h2 class="section-title-center">Quiénes Somos</h2>
+                <p class="section-subtitle-center">Conoce la pasión y el diseño detrás de Altiva Láser</p>
 
-        <div class="mv-grid">
-            <div class="mv-box">
-                <h3 class="mv-title">🎯 Nuestra Misión</h3>
-                <p class="mv-text">Transformar ideas en piezas únicas de acrílico y madera mediante tecnología láser de alta precisión, ofreciendo empaques y elementos decorativos que agreguen valor estético y comercial a nuestros clientes.</p>
+            <div class="mv-grid">
+                <div class="mv-box">
+                    <h3 class="mv-title">🎯 Nuestra Misión</h3>
+                        <p class="mv-text">Transformar ideas en piezas únicas de acrílico y madera mediante tecnología láser de alta precisión, ofreciendo empaques y elementos decorativos que agreguen valor estético y comercial a nuestros clientes.</p>
+                </div>
+                <div class="mv-box">
+                    <h3 class="mv-title">🌟 Nuestra Visión</h3>
+                        <p class="mv-text">Ser el taller líder de diseño y corte láser reconocido por la excelencia en acabados, innovación constante en empaques de lujo y el desarrollo continuo de nuevos productos para repostería y eventos.</p>
+                </div>
             </div>
-            <div class="mv-box">
-                <h3 class="mv-title">🌟 Nuestra Visión</h3>
-                <p class="mv-text">Ser el taller líder de diseño y corte láser reconocido por la excelencia en acabados, innovación constante en empaques de lujo y el desarrollo continuo de nuevos productos para repostería y eventos.</p>
+
+            <h3 class="section-title-center" style="font-size: 1.4rem; margin-top: 40px;">Nuestro Equipo</h3>
+                <div style="text-align: center; margin-top: 25px;">
+                    <img src="fundadores.jpg" alt="Fundadores Altiva Láser" style="width: 100%; max-width: 550px; height: auto; border-radius: 16px; border: 3px solid var(--primary); object-fit: cover; margin-bottom: 15px;" onerror="this.src='icon.png'">
+                        <h4 style="font-size: 1.15rem; color: var(--text-dark); font-weight: 700; margin-top: 10px;">
+                        Henry Jaramillo &bull; Paula Vallejo &bull; Maria Paulina Jaramillo
+                        </h4>
+                </div>
             </div>
         </div>
 
-        <h3 class="section-title-center" style="font-size: 1.4rem; margin-top: 40px;">Nuestro Equipo</h3>
-        <div style="text-align: center; margin-top: 25px;">
-            <img src="fundadores.jpg" alt="Fundadores Altiva Láser" style="width: 100%; max-width: 550px; height: auto; border-radius: 16px; border: 3px solid var(--primary); object-fit: cover; margin-bottom: 15px;" onerror="this.src='icon.png'">
-            <h4 style="font-size: 1.15rem; color: var(--text-dark); font-weight: 700; margin-top: 10px;">
-                Henry Jaramillo &bull; Paula Vallejo &bull; Maria Paulina Jaramillo
-            </h4>
-        </div>
-    </div>
-</div>
-
-        <!-- Pestaña Catálogo -->
+<!-- Pestaña Catálogo ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
         <div id="catalogo" class="tab-content">
             <div class="catalog-header">
                 <h2 class="section-title-center">Nuestro Catálogo</h2>
                 <p class="section-subtitle-center">Explora nuestras piezas en corte y grabado láser personalizadas</p>
 
-                <!-- Barra de Búsqueda -->
+<!-- Barra de Búsqueda --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
                 <div class="search-box">
                     <input type="text" id="catalogSearch" placeholder="🔍 Buscar producto (ej. acrílico, pebetero, caja)..." onkeyup="filterProducts()">
                 </div>
 
-                <!-- Nota de Producción -->
+<!-- Burbuja de nota de Producción --------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
                 <div class="notice-box">
                     ⏳ <strong>Nota de producción:</strong> Todos nuestros productos son artesanales y se fabrican bajo pedido. Recomendamos agendar con 5 días de anticipación.
                 </div>
 
-                <!-- Nota de productos -->
+<!-- Burbuja de nota de productos ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
                 <div class="notice-box">
                 ✨ <strong>Productos 100% personalizables:</strong> Este catálogo te sirve de inspiración. Puedes pedir el diseño tal como lo ves o adaptarlo con tu logo, medidas, frases y acabados.
                </div>
 
-                <!-- Filtros por Categoría -->
+<!-- Filtros por Categoría ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
                 <div class="filter-container">
                     <button class="btn-filter active" onclick="filterCategory('todos', this)">Todos</button>
                     <button class="btn-filter" onclick="filterCategory('acrilicos', this)">Empaques Acrílicos</button>
@@ -99,11 +103,11 @@
                 </div>
             </div>
 
-            <!-- GRILLA DE PRODUCTOS -->
-            <div class="catalog-grid" id="catalogGrid">
+<!-- Desplegable de productos ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="catalog-grid" id="catalogGrid">
 
 
-                <!-- Producto 1: Bases Rectangulares para Repostería -->
+        <!-- Producto 1: Bases Rectangulares para Repostería -->
                 <div class="product-card" data-category="apliques" data-name="bases rectangulares reposteria cake boards mdf acrilico logo">
                     <div class="product-img-wrapper">
                         <span class="product-badge">Repostería & Marca</span>
@@ -122,7 +126,7 @@
                     </div>
                 </div>
 
-                <!-- Producto 2: Bases Especiales con Logo -->
+        <!-- Producto 2: Bases Especiales con Logo -->
                 <div class="product-card" data-category="apliques" data-name="bases especiales logo cake boards mdf forma calado marca">
                     <div class="product-img-wrapper">
                         <span class="product-badge">Marca & Repostería</span>
@@ -141,7 +145,7 @@
                     </div>
                 </div>
 
-                <!-- Producto 3: Bases Circulares para Repostería -->
+        <!-- Producto 3: Bases Circulares para Repostería -->
                 <div class="product-card" data-category="apliques" data-name="bases circulares reposteria cake boards mdf acrilico logo marca">
                     <div class="product-img-wrapper">
                         <span class="product-badge">Repostería & Marca</span>
@@ -160,7 +164,7 @@
                     </div>
                 </div>
 
-<!-- Producto 4: Base para Velitas Individual -->
+        <!-- Producto 4: Base para Velitas Individual -->
 <div class="product-card" data-category="apliques temporada" data-name="base para velitas individual estrella copo nieve mdf blanca dorada navidad">
     <div class="product-img-wrapper">
         <span class="product-badge">Apliques & Navidad</span>
@@ -833,7 +837,7 @@
 
             </div>
 
-            <!-- Paginación dinámica -->
+<!-- Paginación dinámica ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
             <div class="pagination-container" id="paginationContainer"></div>
 
            
@@ -842,7 +846,9 @@
         
         </div>
 
-        <!-- Pestaña Contacto -->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+<!-- Pestaña Contacto ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
         <div id="contacto" class="tab-content">
             <div class="contact-container">
                 <h2 class="contact-title">¡Hablemos de tu Proyecto!</h2>
@@ -857,7 +863,7 @@
     </a>
 </div>
 
-                <!-- Bloque de Ubicación -->
+<!-- Bloque de Ubicación -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
                 <div class="location-box">
                         <h3 class="location-title">📍 Ubicación</h3>
                         <p class="location-address">Carrera 50A #92-46, Aranjuez</p>
